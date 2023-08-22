@@ -52,4 +52,9 @@ export class Project {
         // Add the to do item to 'this' projects array of to do items.
         this.toDoItems.push(ToDo);
     }
+
+    // Delete a ToDo Item inside the project's "toDoItems" array.
+    deleteToDo(ToDo) {
+        this.toDoItems.splice(this.toDoItems.indexOf(ToDo), 1);
+    }
 }
