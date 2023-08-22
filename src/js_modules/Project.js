@@ -10,6 +10,9 @@ const generateUniqueId = require("generate-unique-id");
  */
 export class Project {
 
+    // Storage of all "Project" instances with "Home" as the default project.
+    static projects = [new Project("Home", null, "home-project")];
+
     // Project Constructor.
     constructor(projectTitle, toDoItems = null, projectId = null) {
 
