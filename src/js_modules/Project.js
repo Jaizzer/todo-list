@@ -42,4 +42,14 @@ export class Project {
      delete() {
         Project.projects.splice(Project.projects.indexOf(this), 1);
     }
+
+    // Add a ToDo Item inside the project.
+    addToDo(ToDo) {
+
+        // Set the project reference property of the ToDo item to 'this' current project instance.
+        ToDo.project = this;
+
+        // Add the to do item to 'this' projects array of to do items.
+        this.toDoItems.push(ToDo);
+    }
 }
