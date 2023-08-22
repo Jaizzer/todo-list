@@ -1,4 +1,5 @@
 import { Project } from "./Project.js";
+import { createProjectCard } from "./createProjectCard.js";
 
 /**
  * @returns A form element
@@ -19,7 +20,13 @@ export function createProjectAdderForm() {
         const projectTitle = form.querySelector("#project-title").value;
 
         // Create a Project.
-        new Project(projectTitle)
+        const project = new Project(projectTitle);
+
+        // Create a project card representation.
+        const projectCard = createProjectCard(project)
+
+        // Render new project to DOM by appending 
+        document.querySelector(".projects-tab").appendChild(projectCard);
 
         // Remove form when done.
         form.parentElement.removeChild(form);
