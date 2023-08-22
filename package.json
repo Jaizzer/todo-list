@@ -21,6 +21,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "flatted": "^3.2.7",
     "generate-unique-id": "^2.0.3"
   }
 }
