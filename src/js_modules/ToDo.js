@@ -14,5 +14,6 @@ export class ToDo {
         this.dueDate = dueDate;
         this.priority = priority;
         this.notes = notes;
+        this.project = null;
     }
 }
