@@ -13,6 +13,23 @@ export class Project {
     // Storage of all "Project" instances with "Home" as the default project.
     static projects = [new Project("Home", null, "home-project")];
 
+    // Load saved "Project.projects" from the local storage.
+    static loadProjects() {
+        // Load serialized saved projects.
+        const serializedSavedProject = localStorage.getItem("Project.projects");
+        if (serializedSavedProject) {
+
+            // Convert serialized saved projects back to original Project object structure.
+            Project.projects = parse(serializedSavedProject)
+                .map(project => {
+                    return new Project(
+                        project.projectTitle, 
+                        project.toDoItems.map(toDoItem => new ToDo(...Object.values(toDoItem))), 
+                        project.projectId)
+                });
+        }
+    }
+
     // Project Constructor.
     constructor(projectTitle, toDoItems = null, projectId = null) {
 
