@@ -19,6 +19,7 @@ export function createProjectCard(project) {
     // Only add feature buttons to "non-Home" projects.
     if (project.projectId !== "home-project") {
         addDeleteButton(projectCard);
+        addEditButton(projectCard);
     }
 
     return projectCard;
