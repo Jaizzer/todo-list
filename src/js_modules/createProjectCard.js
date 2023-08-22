@@ -1,5 +1,6 @@
 import { createProjectEditorForm } from "./createProjectEditorForm.js";
-
+import { setCurrentlySelectedProject } from "./selectedProjectManager.js";
+ 
 export function createProjectCard(project) {
 
     // Create a card for "Project".
@@ -21,6 +22,11 @@ export function createProjectCard(project) {
         addDeleteButton(projectCard);
         addEditButton(projectCard);
     }
+
+    // Set the currently selected project the project corresponding to project card.
+    projectCard.addEventListener("click", () => {
+        setCurrentlySelectedProject(project);
+    })
 
     return projectCard;
 }
