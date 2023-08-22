@@ -73,6 +73,14 @@ export class Project {
         localStorage.setItem("Project.projects", stringify(Project.projects));
     }
 
+    // Edit project title.
+    setProjectTitle(newTitle) {
+        this.projectTitle = newTitle;
+
+        // Save serialized changes to local storage.
+        localStorage.setItem("Project.projects", stringify(Project.projects));
+    }
+
     // Add a ToDo Item inside the project.
     addToDo(ToDo) {
 
