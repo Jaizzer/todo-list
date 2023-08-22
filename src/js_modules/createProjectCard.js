@@ -14,6 +14,11 @@ export function createProjectCard(project) {
     projectTitle.textContent = `${project.projectTitle}`;
     projectCard.appendChild(projectTitle);
 
+    // Only add feature buttons to "non-Home" projects.
+    if (project.projectId !== "home-project") {
+        addDeleteButton(projectCard);
+    }
+
     return projectCard;
 }
 
