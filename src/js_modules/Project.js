@@ -36,6 +36,12 @@ export class Project {
         else {
             this.projectId = generateUniqueId({ length: 15, useNumbers: true, useLetters: true });
         }
+
+        // Push each "Project" instances to "static projects" array except for the "Home" since it is already in the array by default.
+        if (this.projectId !== "home-project") {
+
+            Project.projects.push(this);
+        }
     }
 
      // Delete project from the "Project.projects" array.
