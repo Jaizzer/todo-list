@@ -41,12 +41,18 @@ export class Project {
         if (this.projectId !== "home-project") {
 
             Project.projects.push(this);
+
+            // Save serialized changes to local storage.
+            localStorage.setItem("Project.projects", stringify(Project.projects));
         }
     }
 
      // Delete project from the "Project.projects" array.
      delete() {
         Project.projects.splice(Project.projects.indexOf(this), 1);
+
+        // Save serialized changes to local storage.
+        localStorage.setItem("Project.projects", stringify(Project.projects));
     }
 
     // Add a ToDo Item inside the project.
@@ -57,10 +63,16 @@ export class Project {
 
         // Add the to do item to 'this' projects array of to do items.
         this.toDoItems.push(ToDo);
+
+        // Save serialized changes to local storage.
+        localStorage.setItem("Project.projects", stringify(Project.projects));
     }
 
     // Delete a ToDo Item inside the project's "toDoItems" array.
     deleteToDo(ToDo) {
         this.toDoItems.splice(this.toDoItems.indexOf(ToDo), 1);
+
+        // Save serialized changes to local storage.
+        localStorage.setItem("Project.projects", stringify(Project.projects));
     }
 }
