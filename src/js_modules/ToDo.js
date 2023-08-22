@@ -8,12 +8,12 @@
  * @param {string} notes - Additional notes or comments related to the to-do item.
  */
 export class ToDo {
-    constructor(title, description, dueDate, priority, notes) {
+    constructor(title, description, dueDate, priority, notes, project = null) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.notes = notes;
-        this.project = null;
+        this.project = (project !== null) ? project : null;
     }
 }
