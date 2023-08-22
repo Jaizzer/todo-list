@@ -37,4 +37,9 @@ export class Project {
             this.projectId = generateUniqueId({ length: 15, useNumbers: true, useLetters: true });
         }
     }
+
+     // Delete project from the "Project.projects" array.
+     delete() {
+        Project.projects.splice(Project.projects.indexOf(this), 1);
+    }
 }
