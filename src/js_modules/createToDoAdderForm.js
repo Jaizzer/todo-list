@@ -38,5 +38,12 @@ export function createToDoAdderForm() {
         prioritySelect.appendChild(option);
     });
 
+    // Create Note input.
+    const notesTextarea = document.createElement("textarea");
+    notesTextarea.id = "notes";
+    notesTextarea.name = "notes";
+    notesTextarea.rows = 4;
+    notesTextarea.cols = 50;
+
     return toDoAdderForm;
 }
