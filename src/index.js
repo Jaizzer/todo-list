@@ -4,6 +4,7 @@ import { createProjectAdderForm } from "./js_modules/createProjectAdderForm.js";
 import { setCurrentlySelectedProject, getCurrentlySelectedProject } from "./js_modules/selectedProjectManager.js";
 
 import "./style.css";
+import { createToDoAdderForm } from "./js_modules/createToDoAdderForm.js";
 
 window.addEventListener("load", () => {
 
@@ -25,4 +26,12 @@ const projectAdderButton = document.querySelector(".project-adder");
 projectAdderButton.addEventListener("click", () => {
     const projectAdderForm = createProjectAdderForm();
     document.body.appendChild(projectAdderForm);
+})
+
+
+// Load ToDo adder from when "Add ToDo" button is pressed.
+const toDoAdderButton = document.querySelector(".to-do-adder");
+toDoAdderButton.addEventListener("click", () => {
+    const toDoAdderForm = createToDoAdderForm();
+    document.body.appendChild(toDoAdderForm);
 })
