@@ -25,5 +25,18 @@ export function createToDoAdderForm() {
     dueDateInput.name = "dueDate";
     dueDateInput.required = true;
 
+    // Create ToDo priority selection.
+    const prioritySelect = document.createElement("select");
+    prioritySelect.id = "priority";
+    prioritySelect.name = "priority";
+
+    const priorityOptions = ["High", "Medium", "Low"];
+    priorityOptions.forEach(optionValue => {
+        const option = document.createElement("option");
+        option.value = optionValue;
+        option.textContent = optionValue;
+        prioritySelect.appendChild(option);
+    });
+
     return toDoAdderForm;
 }
