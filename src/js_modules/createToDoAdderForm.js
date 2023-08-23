@@ -10,5 +10,13 @@ export function createToDoAdderForm() {
     titleInput.name = "title";
     titleInput.required = true;
 
+    // Create description area.
+    const descriptionTextarea = document.createElement("textarea");
+    descriptionTextarea.id = "description";
+    descriptionTextarea.name = "description";
+    descriptionTextarea.rows = 4;
+    descriptionTextarea.cols = 50;
+    descriptionTextarea.required = true;
+
     return toDoAdderForm;
 }
