@@ -18,5 +18,12 @@ export function createToDoAdderForm() {
     descriptionTextarea.cols = 50;
     descriptionTextarea.required = true;
 
+    // Create due date input.
+    const dueDateInput = document.createElement("input");
+    dueDateInput.type = "date";
+    dueDateInput.id = "due-date";
+    dueDateInput.name = "dueDate";
+    dueDateInput.required = true;
+
     return toDoAdderForm;
 }
