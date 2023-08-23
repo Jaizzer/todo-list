@@ -53,3 +53,14 @@ export function createToDoAdderForm() {
 
     return toDoAdderForm;
 }
+
+
+// Returns a div containing a labeled input.
+function createFieldDiv(labelText, inputElement) {
+    const div = document.createElement("div");
+    const label = document.createElement("label");
+    label.textContent = labelText;
+    label.appendChild(inputElement);
+    div.appendChild(label);
+    return div;
+}
