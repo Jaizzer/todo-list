@@ -1,3 +1,6 @@
+import { getCurrentlySelectedProject } from "./selectedProjectManager.js";
+import { ToDo } from "./ToDo.js"
+
 export function createToDoAdderForm() {
 
     const toDoAdderForm = document.createElement("form");
@@ -56,6 +59,24 @@ export function createToDoAdderForm() {
     submitButton.id = "submit-form";
     submitButton.value = "Create ToDo";
     toDoAdderForm.appendChild(submitButton);
+
+
+    // Add feature to form that when submitted, a ToDo object is created.
+    toDoAdderForm.addEventListener("submit", event => {
+
+        event.preventDefault()
+
+        const toDoTitle = document.querySelector("#title").value;
+        const toDoDescription = document.querySelector("#description").value;
+        const toDoDueDate = document.querySelector("#due-date").value;
+        const toDoPriority = document.querySelector("#priority").value;
+        const toDoNotes = document.querySelector("#notes").value;
+
+        const toDoItem = new ToDo(...[toDoTitle, toDoDescription, toDoDueDate, toDoPriority, toDoNotes])
+        getCurrentlySelectedProject().addToDo(toDoItem);
+
+        toDoAdderForm.parentElement.removeChild(toDoAdderForm);
+    });
 
     return toDoAdderForm;
 }
