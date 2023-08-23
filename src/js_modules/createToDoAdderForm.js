@@ -45,5 +45,11 @@ export function createToDoAdderForm() {
     notesTextarea.rows = 4;
     notesTextarea.cols = 50;
 
+    // Create submit button.
+    const submitButton = document.createElement("input");
+    submitButton.type = "submit";
+    submitButton.id = "submit-form";
+    submitButton.value = "Create ToDo";
+
     return toDoAdderForm;
 }
