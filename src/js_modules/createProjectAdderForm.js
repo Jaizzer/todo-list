@@ -9,6 +9,15 @@ export function createProjectAdderForm() {
     form.className = "project-adder-form";
     form.innerHTML = `<input type="text" id="project-title" placeholder="Hello">
                       <input type="submit" value="Add Project">`;
+    
+    // Create cancel button.
+    const cancelButton = document.createElement("input");
+    cancelButton.type = "button";
+    cancelButton.value = "Cancel";
+    cancelButton.addEventListener("click", () => {
+        form.parentElement.removeChild(form);
+    })
+    form.appendChild(cancelButton);
 
     // Add feature to form that creates the Project once submitted.
     form.addEventListener("submit", event => {
