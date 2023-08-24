@@ -20,6 +20,15 @@ export function createProjectEditorForm(projectCard) {
     submitButton.value = "Done";
     projectEditorForm.appendChild(submitButton);
 
+    // Create cancel button.
+    const cancelButton = document.createElement("input");
+    cancelButton.type = "button";
+    cancelButton.value = "Cancel";
+    cancelButton.addEventListener("click", () => {
+        projectEditorForm.parentElement.removeChild(projectEditorForm);
+    })
+    projectEditorForm.appendChild(cancelButton);
+
     // Add feature to project editor form that modifies the project title when submitted.
     projectEditorForm.addEventListener("submit", event => {
 
