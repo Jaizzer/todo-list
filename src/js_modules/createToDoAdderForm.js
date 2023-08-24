@@ -60,6 +60,15 @@ export function createToDoAdderForm() {
     submitButton.value = "Create ToDo";
     toDoAdderForm.appendChild(submitButton);
 
+    // Create cancel button.
+    const cancelButton = document.createElement("input");
+    cancelButton.type = "button";
+    cancelButton.value = "Cancel";
+    cancelButton.addEventListener("click", () => {
+        toDoAdderForm.parentElement.removeChild(toDoAdderForm);
+    })
+    toDoAdderForm.appendChild(cancelButton);
+
 
     // Add feature to form that when submitted, a ToDo object is created.
     toDoAdderForm.addEventListener("submit", event => {
