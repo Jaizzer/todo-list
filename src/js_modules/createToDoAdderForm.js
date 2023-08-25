@@ -1,3 +1,4 @@
+import { createToDoCard } from "./createToDoCard.js";
 import { getCurrentlySelectedProject } from "./selectedProjectManager.js";
 import { ToDo } from "./ToDo.js"
 
@@ -83,6 +84,10 @@ export function createToDoAdderForm() {
 
         const toDoItem = new ToDo(...[toDoTitle, toDoDescription, toDoDueDate, toDoPriority, toDoNotes])
         getCurrentlySelectedProject().addToDo(toDoItem);
+
+        
+        // Render To-Do item in 'to-do' tab immediately once created.
+        document.querySelector(".to-do-tab").appendChild(createToDoCard(toDoItem));
 
         toDoAdderForm.parentElement.removeChild(toDoAdderForm);
     });
