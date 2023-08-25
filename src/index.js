@@ -12,7 +12,9 @@ window.addEventListener("load", () => {
     Project.loadProjects();
 
     // Set currently selected project to "Home" when page loads.
-    setCurrentlySelectedProject(Project.projects.find(project => project.projectId === "home-project"));
+    const homeProject = Project.projects.find(project => project.projectId === "home-project")
+    setCurrentlySelectedProject(homeProject);
+    
 
     // Load all projects to projects-tab.
     const projectsTab = document.querySelector(".projects-tab")
