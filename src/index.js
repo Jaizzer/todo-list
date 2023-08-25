@@ -6,6 +6,7 @@ import { setCurrentlySelectedProject, getCurrentlySelectedProject } from "./js_m
 import "./style.css";
 import { createToDoAdderForm } from "./js_modules/createToDoAdderForm.js";
 import { createToDoCard } from "./js_modules/createToDoCard.js";
+import { renderToDoItems } from "./js_modules/renderToDoItems.js";
 
 window.addEventListener("load", () => {
 
@@ -21,14 +22,7 @@ window.addEventListener("load", () => {
 
         const projectCard = createProjectCard(project)
         projectCard.addEventListener("click", () => {
-
-            // Clear previous content.
-            document.querySelector(".to-do-tab").innerHTML = "";
-
-            // Create and render a ToDo item card that corresponds to the parent project when parent project is clicked.
-            project.toDoItems.forEach(toDoItem => {
-                document.querySelector(".to-do-tab").appendChild(createToDoCard(toDoItem));
-            });
+            renderToDoItems(project);
         })
 
         projectsTab.appendChild(projectCard);
