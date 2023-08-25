@@ -3,6 +3,9 @@ export function createToDoCard(ToDo) {
     // Create to-do card div.
     const toDoCard = document.createElement("div");
     toDoCard.className = "to-do-container"
+
+    // Add reference to the ToDo.
+    toDoCard.toDoReference = ToDo;
     
     // Create to-do title container.
     const toDoTitle = document.createElement("div");
