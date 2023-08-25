@@ -16,4 +16,8 @@ export class ToDo {
         this.notes = notes;
         this.project = (project !== null) ? project : null;
     }
+
+    delete() {
+        this.project.deleteToDo(this);
+    }
 }
