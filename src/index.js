@@ -1,12 +1,10 @@
 import { Project } from "./js_modules/Project.js";
 import { createProjectCard } from "./js_modules/createProjectCard.js";
 import { createProjectAdderForm } from "./js_modules/createProjectAdderForm.js";
-import { setCurrentlySelectedProject, getCurrentlySelectedProject } from "./js_modules/selectedProjectManager.js";
+import { setCurrentlySelectedProject } from "./js_modules/selectedProjectManager.js";
 
 import "./style.css";
 import { createToDoAdderForm } from "./js_modules/createToDoAdderForm.js";
-import { createToDoCard } from "./js_modules/createToDoCard.js";
-import { renderToDoItems } from "./js_modules/renderToDoItems.js";
 
 window.addEventListener("load", () => {
 
