@@ -19,6 +19,8 @@ export function createToDoCard(ToDo) {
     toDoDueDate.textContent = ToDo.dueDate;
     toDoCard.appendChild(toDoDueDate);
 
+    addDeleteButton(toDoCard);
+
     return toDoCard;
 }
 
