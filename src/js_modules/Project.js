@@ -26,7 +26,11 @@ export class Project {
                 .map(project => {
                     return new Project(
                         project.projectTitle, 
-                        project.toDoItems.map(toDoItem => new ToDo(...Object.values(toDoItem))), 
+                        project.toDoItems.map(toDoItem => {
+                            // Reconstruct to-do items without "project" property since parent project is being currently instantiated in this point.
+                            const { project, ...nonProjectProperties } = toDoItem;
+                            return new ToDo(...Object.values(nonProjectProperties), null);
+                        }), 
                         project.projectId)
                 });
         }
