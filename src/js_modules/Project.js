@@ -33,6 +33,11 @@ export class Project {
                         }), 
                         project.projectId)
                 });
+            
+            // Now assign the "project" property of ToDo objects to the parent projects since parent projects are now created at this point.
+            Project.projects.forEach(project => {
+                project.toDoItems.forEach(toDoItem => toDoItem.project = project);
+            });
         }
     }
 
