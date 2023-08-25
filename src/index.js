@@ -21,9 +21,6 @@ window.addEventListener("load", () => {
     Project.projects.forEach(project => {
 
         const projectCard = createProjectCard(project)
-        projectCard.addEventListener("click", () => {
-            renderToDoItems(project);
-        })
 
         projectsTab.appendChild(projectCard);
     })
