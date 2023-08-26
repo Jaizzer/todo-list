@@ -1,5 +1,6 @@
 import { Project } from "./Project.js";
 import { createProjectCard } from "./createProjectCard.js";
+import { setCurrentlySelectedProject } from "./selectedProjectManager.js";
 
 /**
  * @returns A form element
@@ -36,6 +37,9 @@ export function createProjectAdderForm() {
 
         // Render new project to DOM by appending 
         document.querySelector(".projects-tab").appendChild(projectCard);
+
+        // Make the newly created project as the currently selected project.
+        setCurrentlySelectedProject(project);
 
         // Remove form when done.
         form.parentElement.removeChild(form);
