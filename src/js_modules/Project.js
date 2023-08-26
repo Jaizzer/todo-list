@@ -12,8 +12,8 @@ const generateUniqueId = require("generate-unique-id");
  */
 export class Project {
 
-    // Storage of all "Project" instances with "Home" as the default project.
-    static projects = [new Project("Home", null, "home-project")];
+    // Storage of all "Project" instances.
+    static projects = [];
 
     // Load saved "Project.projects" from the local storage.
     static loadProjects() {
@@ -38,6 +38,10 @@ export class Project {
             Project.projects.forEach(project => {
                 project.toDoItems.forEach(toDoItem => toDoItem.project = project);
             });
+        }
+        // If there is no projects to be load, create default "Home" project.
+        else {
+            new Project("Home", null, "home-project");
         }
     }
 
