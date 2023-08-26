@@ -48,7 +48,9 @@ function addDeleteButton(projectCard) {
                             </svg>`;
 
     // Add delete functionality to delete button.
-    deleteButton.addEventListener("click", () => {
+    deleteButton.addEventListener("click", (event) => {
+
+        event.stopPropagation();
         
         // Delete Project (back-end)
         projectCard.projectReference.delete();
