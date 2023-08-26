@@ -1,6 +1,7 @@
 import { createProjectEditorForm } from "./createProjectEditorForm.js";
 import { renderToDoItems } from "./renderToDoItems.js";
 import { setCurrentlySelectedProject } from "./selectedProjectManager.js";
+import { Project } from "./Project.js";
  
 export function createProjectCard(project) {
 
@@ -57,6 +58,9 @@ function addDeleteButton(projectCard) {
 
         // Clear "To-Do" tabs.
         document.querySelector(".to-do-tab").innerHTML = "";
+
+        // Make "Home" project the currently selected project when current project is deleted.
+        setCurrentlySelectedProject(Project.projects.find(project => project.projectId === "home-project"));
         
         // Delete Project (front-end)
         projectCard.parentNode.removeChild(projectCard);
