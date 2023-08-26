@@ -53,6 +53,9 @@ function addDeleteButton(projectCard) {
         // Delete Project (back-end)
         projectCard.projectReference.delete();
 
+        // Clear "To-Do" tabs.
+        document.querySelector(".to-do-tab").innerHTML = "";
+        
         // Delete Project (front-end)
         projectCard.parentNode.removeChild(projectCard);
 
