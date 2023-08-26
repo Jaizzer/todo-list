@@ -69,14 +69,10 @@ export class Project {
             this.projectId = generateUniqueId({ length: 15, useNumbers: true, useLetters: true });
         }
 
-        // Push each "Project" instances to "static projects" array except for the "Home" since it is already in the array by default.
-        if (this.projectId !== "home-project") {
+        Project.projects.push(this);
 
-            Project.projects.push(this);
-
-            // Save serialized changes to local storage.
-            localStorage.setItem("Project.projects", stringify(Project.projects));
-        }
+        // Save serialized changes to local storage.
+        localStorage.setItem("Project.projects", stringify(Project.projects));
     }
 
      // Delete project from the "Project.projects" array.
