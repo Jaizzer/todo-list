@@ -5,7 +5,6 @@ import { setCurrentlySelectedProject } from "./js_modules/selectedProjectManager
 
 import "./style.css";
 import { createToDoAdderForm } from "./js_modules/createToDoAdderForm.js";
-import { renderToDoItems } from "./js_modules/renderToDoItems.js";
 
 window.addEventListener("load", () => {
 
@@ -14,9 +13,7 @@ window.addEventListener("load", () => {
 
     // Set currently selected project to "Home" when page loads.
     const homeProject = Project.projects.find(project => project.projectId === "home-project")
-    setCurrentlySelectedProject(homeProject);
-    renderToDoItems(homeProject);
-    
+    setCurrentlySelectedProject(homeProject);    
 
     // Load all projects to projects-tab.
     const projectsTab = document.querySelector(".projects-tab")
