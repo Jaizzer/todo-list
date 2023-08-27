@@ -1,3 +1,6 @@
+import { createToDoCard } from "./createToDoCard";
+import { ToDo } from "./ToDo";
+
 export function createToDoEditorForm(toDoCard) {
 
     const toDoEditorForm = document.createElement("form");
@@ -70,6 +73,33 @@ export function createToDoEditorForm(toDoCard) {
         toDoEditorForm.parentElement.removeChild(toDoEditorForm);
     })
     toDoEditorForm.appendChild(cancelButton);
+
+    // Add feature to form that when submitted, a ToDo object is created.
+    toDoEditorForm.addEventListener("submit", event => {
+
+        // Prevent form submission.
+        event.preventDefault()
+
+        // Parse form control values.
+        const toDoTitle = document.querySelector("#title").value;
+        const toDoDescription = document.querySelector("#description").value;
+        const toDoDueDate = document.querySelector("#due-date").value;
+        const toDoPriority = document.querySelector("#priority").value;
+        const toDoNotes = document.querySelector("#notes").value;
+
+        // Create a ToDo item with all changes applied.
+        const updatedToDoItem = new ToDo(...[toDoTitle, toDoDescription, toDoDueDate, toDoPriority, toDoNotes])
+
+        // Replace the current ToDo item with the ToDo item with all changes applied in parent project's "toDoItems" array.
+        toDoCard.toDoReference.project.replaceToDo(updatedToDoItem, toDoCard.toDoReference);
+
+        // Update corresponding to do card in DOM.
+        const updatedToDoCard = createToDoCard(updatedToDoItem);
+        document.querySelector(".to-do-tab").replaceChild(updatedToDoCard, toDoCard);
+
+        // Remove the form from the DOM once submitted.
+        toDoEditorForm.parentElement.removeChild(toDoEditorForm);
+    });
 
     return toDoEditorForm;
 }
