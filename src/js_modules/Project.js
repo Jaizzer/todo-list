@@ -112,4 +112,9 @@ export class Project {
         // Save serialized changes to local storage.
         localStorage.setItem("Project.projects", stringify(Project.projects));
     }
+
+    #saveChanges() {
+        // Save serialized changes to local storage.
+        localStorage.setItem("Project.projects", stringify(Project.projects));
+    }
 }
