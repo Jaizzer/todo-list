@@ -73,7 +73,7 @@ export class Project {
         Project.projects.push(this);
 
         // Save serialized changes to local storage.
-        localStorage.setItem("Project.projects", stringify(Project.projects));
+        this.#saveChanges();
     }
 
      // Delete project from the "Project.projects" array.
@@ -81,7 +81,7 @@ export class Project {
         Project.projects.splice(Project.projects.indexOf(this), 1);
 
         // Save serialized changes to local storage.
-        localStorage.setItem("Project.projects", stringify(Project.projects));
+        this.#saveChanges();
     }
 
     // Edit project title.
@@ -89,7 +89,7 @@ export class Project {
         this.projectTitle = newTitle;
 
         // Save serialized changes to local storage.
-        localStorage.setItem("Project.projects", stringify(Project.projects));
+        this.#saveChanges();
     }
 
     // Add a ToDo Item inside the project.
@@ -102,7 +102,7 @@ export class Project {
         this.toDoItems.push(ToDo);
 
         // Save serialized changes to local storage.
-        localStorage.setItem("Project.projects", stringify(Project.projects));
+        this.#saveChanges();
     }
 
     // Delete a ToDo Item inside the project's "toDoItems" array.
@@ -110,7 +110,7 @@ export class Project {
         this.toDoItems.splice(this.toDoItems.indexOf(ToDo), 1);
 
         // Save serialized changes to local storage.
-        localStorage.setItem("Project.projects", stringify(Project.projects));
+        this.#saveChanges();
     }
 
     #saveChanges() {
