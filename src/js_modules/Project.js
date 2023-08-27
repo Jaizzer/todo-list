@@ -113,6 +113,19 @@ export class Project {
         this.#saveChanges();
     }
 
+    // Replace ToDo items inside the project's "toDoItems" array.
+    replaceToDo(newToDo, oldToDo) {
+
+        // Set new ToDo item's project reference to this project.
+        newToDo.project = this;
+
+        // Replace ToDo item with the new ToDo item.
+        this.toDoItems[this.toDoItems.indexOf(oldToDo)] = newToDo;
+        
+        // Save serialized changes to local storage.
+        this.#saveChanges();
+    }
+
     #saveChanges() {
         // Save serialized changes to local storage.
         localStorage.setItem("Project.projects", stringify(Project.projects));
