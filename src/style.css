@@ -28,3 +28,8 @@ body {
     display: grid;
     grid-template-columns: 200px 1fr;
 }
+
+.dashboard {
+    background-color: var(--primary);
+    padding: 20px;
+}
