@@ -15,6 +15,9 @@ export class Project {
     // Storage of all "Project" instances.
     static projects = [];
 
+    // Home project.
+    static home;
+
     // Load saved "Project.projects" from the local storage.
     static loadProjects() {
         // Load serialized saved projects.
@@ -43,6 +46,9 @@ export class Project {
         else {
             new Project("Home", null, "home-project");
         }
+
+        // Put home project to static variable.
+        Project.home = Project.projects.find(project => project.projectId === "home-project");
     }
 
     // Project Constructor.
