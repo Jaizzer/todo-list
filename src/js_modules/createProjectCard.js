@@ -1,5 +1,4 @@
 import { createProjectEditorForm } from "./createProjectEditorForm.js";
-import { renderToDoItems } from "./renderToDoItems.js";
 import { setCurrentlySelectedProject } from "./selectedProjectManager.js";
 import { Project } from "./Project.js";
  
@@ -28,7 +27,6 @@ export function createProjectCard(project) {
     // Set the currently selected project the project corresponding to project card.
     projectCard.addEventListener("click", () => {
         setCurrentlySelectedProject(project);
-        renderToDoItems(project);
     })
 
     return projectCard;
