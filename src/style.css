@@ -12,3 +12,7 @@
     --secondary: #d8e7e9;
     --accent: #579d5a;
 }
+
+* {
+    box-sizing: border-box;
+}
