@@ -2,3 +2,11 @@
     height: 10px;
     width: 10px;
 }
+
+:root {
+    --text: #10090c;
+    --background: #fdfcfc;
+    --primary: #b7d7c9;
+    --secondary: #d8e7e9;
+    --accent: #579d5a;
+}
