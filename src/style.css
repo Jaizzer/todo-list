@@ -90,3 +90,21 @@ body {
 
     background-color: var(--background);
 }
+
+
+.to-do-adder {
+    height: 45px;
+    width: 100%;
+
+    padding: 10px;
+
+    border: 3px solid white;
+    border-radius: 6px;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-align: justify;
+
+    background-color: transparent;
+}
