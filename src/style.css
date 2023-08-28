@@ -38,6 +38,11 @@ body {
     gap: 10px;
 }
 
+.projects-tab {
+    display: grid;
+    gap: 10px;
+}
+
 .project-card {
     padding: 5px;
 
