@@ -1,6 +1,6 @@
 import { createToDoCard } from "./createToDoCard";
 
-export function renderToDoItems(Project) {
+export function renderToDoItems(currentProject) {
     // Access to-do container.
     const toDoTab = document.querySelector(".to-do-tab");
 
@@ -8,7 +8,7 @@ export function renderToDoItems(Project) {
     toDoTab.innerHTML = "";
 
     // Put all Project's to-do items in the to-do tab.
-    Project.toDoItems.forEach(toDoItem => { 
+    currentProject.toDoItems.forEach(toDoItem => { 
         toDoTab.appendChild(createToDoCard(toDoItem));
     });
 }
