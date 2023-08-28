@@ -53,3 +53,15 @@ body {
     grid-template-columns: 1fr 25px 25px;
     gap: 5px;
 }
+
+.project-adder {
+    padding: 5px 0;
+
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+
+    background-color: var(--accent);
+
+    color: white;
+    font-weight: 600;
+}
