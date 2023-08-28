@@ -4,8 +4,13 @@ import { ToDo } from "./ToDo.js"
 
 export function createToDoAdderForm() {
 
+    // Create form container.
+    const formContainer = document.createElement("div");
+    formContainer.className = "form-container";
+
     const toDoAdderForm = document.createElement("form");
     toDoAdderForm.className = "to-do-adder-form";
+    formContainer.appendChild(toDoAdderForm);
 
     // Create title input.
     const titleInput = document.createElement("input");
@@ -66,7 +71,7 @@ export function createToDoAdderForm() {
     cancelButton.type = "button";
     cancelButton.value = "Cancel";
     cancelButton.addEventListener("click", () => {
-        toDoAdderForm.parentElement.removeChild(toDoAdderForm);
+        formContainer.parentElement.removeChild(formContainer);
     })
     toDoAdderForm.appendChild(cancelButton);
 
@@ -85,14 +90,13 @@ export function createToDoAdderForm() {
         const toDoItem = new ToDo(...[toDoTitle, toDoDescription, toDoDueDate, toDoPriority, toDoNotes])
         getCurrentlySelectedProject().addToDo(toDoItem);
 
-        
         // Render To-Do item in 'to-do' tab immediately once created.
         document.querySelector(".to-do-tab").appendChild(createToDoCard(toDoItem));
 
-        toDoAdderForm.parentElement.removeChild(toDoAdderForm);
+        formContainer.parentElement.removeChild(formContainer);
     });
 
-    return toDoAdderForm;
+    return formContainer;
 }
 
 

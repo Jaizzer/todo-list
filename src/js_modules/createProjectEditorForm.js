@@ -3,9 +3,14 @@
  */
 export function createProjectEditorForm(projectCard) {
 
+    // Create form container.
+    const formContainer = document.createElement("div");
+    formContainer.className = "form-container";
+
     // Create project editor form.
     const projectEditorForm = document.createElement("form");
     projectEditorForm.className = "project-editor-form";
+    formContainer.appendChild(projectEditorForm);
 
     // Create the  new-project-title input field.
     const newProjectTitleInput = document.createElement("input");
@@ -25,7 +30,7 @@ export function createProjectEditorForm(projectCard) {
     cancelButton.type = "button";
     cancelButton.value = "Cancel";
     cancelButton.addEventListener("click", () => {
-        projectEditorForm.parentElement.removeChild(projectEditorForm);
+        formContainer.parentElement.removeChild(formContainer);
     })
     projectEditorForm.appendChild(cancelButton);
 
@@ -41,8 +46,8 @@ export function createProjectEditorForm(projectCard) {
         projectCard.querySelector(".project-name").textContent = newProjectTitleInput.value;
 
         // Remove form from the DOM when submitted.
-        projectEditorForm.parentElement.removeChild(projectEditorForm);
+        formContainer.parentElement.removeChild(formContainer);
     });
 
-    return projectEditorForm;
+    return formContainer;
 }

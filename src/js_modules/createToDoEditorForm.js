@@ -3,8 +3,13 @@ import { ToDo } from "./ToDo";
 
 export function createToDoEditorForm(toDoCard) {
 
+    // Create form container.
+    const formContainer = document.createElement("div");
+    formContainer.className = "form-container";
+
     const toDoEditorForm = document.createElement("form");
     toDoEditorForm.className = "to-do-adder-form";
+    formContainer.appendChild(toDoEditorForm)
 
     // Create title input.
     const titleInput = document.createElement("input");
@@ -70,7 +75,7 @@ export function createToDoEditorForm(toDoCard) {
     cancelButton.type = "button";
     cancelButton.value = "Cancel";
     cancelButton.addEventListener("click", () => {
-        toDoEditorForm.parentElement.removeChild(toDoEditorForm);
+        formContainer.parentElement.removeChild(formContainer);
     })
     toDoEditorForm.appendChild(cancelButton);
 
@@ -98,10 +103,10 @@ export function createToDoEditorForm(toDoCard) {
         document.querySelector(".to-do-tab").replaceChild(updatedToDoCard, toDoCard);
 
         // Remove the form from the DOM once submitted.
-        toDoEditorForm.parentElement.removeChild(toDoEditorForm);
+        formContainer.parentElement.removeChild(formContainer);
     });
 
-    return toDoEditorForm;
+    return formContainer;
 }
 
 
