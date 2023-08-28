@@ -58,7 +58,7 @@ function addDeleteButton(projectCard) {
         document.querySelector(".to-do-tab").innerHTML = "";
 
         // Make "Home" project the currently selected project when current project is deleted.
-        setCurrentlySelectedProject(Project.projects);
+        setCurrentlySelectedProject(Project.home);
         
         // Delete Project (front-end)
         projectCard.parentNode.removeChild(projectCard);
