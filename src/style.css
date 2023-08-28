@@ -32,6 +32,10 @@ body {
 .dashboard {
     background-color: var(--primary);
     padding: 20px;
+
+    display: grid;
+    align-content: start;
+    gap: 10px;
 }
 
 .project-card {
