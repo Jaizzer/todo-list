@@ -1,4 +1,5 @@
 import { createToDoCard } from "./createToDoCard";
+import { Project } from "./Project";
 
 export function renderToDoItems(currentProject) {
     // Access to-do container.
@@ -7,8 +8,17 @@ export function renderToDoItems(currentProject) {
     // Clear previous to-do container contents.
     toDoTab.innerHTML = "";
 
-    // Put all Project's to-do items in the to-do tab.
-    currentProject.toDoItems.forEach(toDoItem => { 
-        toDoTab.appendChild(createToDoCard(toDoItem));
-    });
+    // Render all ToDos across all projects if the project is "Home"
+    if (currentProject === Project.home) {
+        Project.projects.forEach(project => project.toDoItems
+            .forEach(toDoItem => {
+                toDoTab.appendChild(createToDoCard(toDoItem));
+            }));
+    }
+    // If current project is not "Home", only render its respective ToDo items.
+    else {
+        currentProject.toDoItems.forEach(toDoItem => {
+            toDoTab.appendChild(createToDoCard(toDoItem));
+        });
+    }
 }
