@@ -70,3 +70,19 @@ body {
     background-color: var(--secondary);
     padding: 20px;
 }
+
+
+.to-do-container {
+
+    height: 45px;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    display: grid;
+    grid-template-columns: 1fr 100px 25px 25px;
+    gap: 5px;
+
+    background-color: var(--background);
+}
