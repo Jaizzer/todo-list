@@ -66,6 +66,17 @@ body {
     align-content: center;
 }
 
+#home-project .icon {
+    display: block;
+
+    scale: 1;
+
+    width: 20px;
+    height: 20px;
+
+    fill: black;
+}
+
 .project-adder {
     padding: 5px 0;
    
