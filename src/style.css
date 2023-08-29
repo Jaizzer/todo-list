@@ -59,14 +59,15 @@ body {
 
 .project-adder {
     padding: 5px 0;
+   
+    border: 0px;
 
-    border: 1px solid var(--accent);
-    border-radius: 6px;
+    display: grid;
+    grid-template-columns: auto auto;
 
-    background-color: var(--accent);
+    background-color: transparent;
 
-    color: white;
-    font-weight: 600;
+    color: black;
 }
 
 .to-do-window {
@@ -176,8 +177,7 @@ input[type = button] {
 }
 
 input[type = submit]:hover, 
-input[type = button]:hover,
-.project-adder:hover {
+input[type = button]:hover {
     border-color: #29462b;
     background-color: #29462b;
 }
