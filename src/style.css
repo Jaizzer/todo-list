@@ -205,3 +205,8 @@ input[type = button]:hover,
     display: block;
     fill: red;
 }
+
+.edit:hover .icon {
+    display: block;
+    fill: green;
+}
