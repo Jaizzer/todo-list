@@ -199,3 +199,9 @@ input[type = button]:hover,
     display: block;
     fill: var(--accent)
 }
+
+
+.delete:hover .icon {
+    display: block;
+    fill: red;
+}
