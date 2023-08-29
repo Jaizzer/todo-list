@@ -27,6 +27,9 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: 200px 1fr;
+
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .dashboard {
