@@ -136,3 +136,8 @@ form {
     display: grid;
     gap: 10px;
 }
+
+input, select, textarea {
+    display: block;
+    border-radius: 10px;
+}
