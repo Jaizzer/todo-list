@@ -44,6 +44,7 @@ export function createProjectEditorForm(projectCard) {
 
         // Modify project title in front-end.
         projectCard.querySelector(".project-name").textContent = newProjectTitleInput.value;
+        document.querySelector(".parent-project-name").textContent = newProjectTitleInput.value;
 
         // Remove form from the DOM when submitted.
         formContainer.parentElement.removeChild(formContainer);
