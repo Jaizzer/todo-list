@@ -52,6 +52,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 25px 25px;
     gap: 5px;
+    align-content: center;
 }
 
 .project-adder {
@@ -93,7 +94,7 @@ body {
     gap: 5px;
 
     align-content: center;
-    
+
     background-color: var(--background);
 }
 
