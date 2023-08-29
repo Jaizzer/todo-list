@@ -78,7 +78,8 @@ body {
 
 .project-adder .icon,
 .to-do-adder .icon {
-   scale: 1.9;
+   width: 20px;
+   height: 20px;
 }
 
 .to-do-window {
