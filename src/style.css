@@ -66,6 +66,11 @@ body {
     align-content: center;
 }
 
+#home-project {
+    justify-content: start;
+    grid-template-columns: auto 1fr;
+}
+
 #home-project .icon {
     display: block;
 
