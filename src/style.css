@@ -142,7 +142,14 @@ input, select, textarea {
     display: block;
     border-radius: 5px;
 
-    border: 1px solid var(--accent);
+    border: 2px solid rgb(215, 211, 211);
 
     padding: 5px 7px;
+}
+
+input:focus, 
+select:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid var(--accent);
 }
