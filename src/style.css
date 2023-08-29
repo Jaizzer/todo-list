@@ -70,6 +70,11 @@ body {
     color: black;
 }
 
+.project-adder .icon,
+.to-do-adder .icon {
+   scale: 1.9;
+}
+
 .to-do-window {
     background-color: white;
     padding: 20px;
