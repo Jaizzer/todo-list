@@ -141,4 +141,8 @@ input, select, textarea {
     width: 100%;
     display: block;
     border-radius: 10px;
+
+    border: 1px solid var(--accent);
+
+    padding: 5px 7px;
 }
