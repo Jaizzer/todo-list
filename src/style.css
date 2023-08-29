@@ -120,4 +120,9 @@ body {
 
     background-color: rgba(101, 101, 101, 0.22); 
     backdrop-filter: blur(1px);
+
+    display: grid;
+
+    align-items: center;
+    justify-content: center;
 }
