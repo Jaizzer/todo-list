@@ -92,6 +92,8 @@ body {
     grid-template-columns: 1fr 100px 25px 25px;
     gap: 5px;
 
+    align-content: center;
+    
     background-color: var(--background);
 }
 
