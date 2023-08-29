@@ -126,3 +126,10 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+form {
+    background-color: var(--secondary);
+
+    border-radius: 10px;
+    padding: 25px;
+}
