@@ -175,3 +175,10 @@ input[type = button] {
     background-color: var(--accent);
     color: white;
 }
+
+input[type = submit]:hover, 
+input[type = button]:hover,
+.project-adder:hover {
+    border-color: #29462b;
+    background-color: #29462b;
+}
