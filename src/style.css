@@ -75,6 +75,10 @@ body {
     gap: 10px;
 }
 
+.to-do-tab {
+    display: grid;
+    gap: 10px;
+}
 
 .to-do-container {
 
