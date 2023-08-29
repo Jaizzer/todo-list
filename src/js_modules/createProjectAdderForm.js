@@ -13,7 +13,7 @@ export function createProjectAdderForm() {
 
     const form = document.createElement("form");
     form.className = "project-adder-form";
-    form.innerHTML = `<input type="text" id="project-title" placeholder="Hello">
+    form.innerHTML = `<input type="text" id="project-title" placeholder="Hello" required>
                       <input type="submit" value="Add Project">`;
     formContainer.appendChild(form)
     
