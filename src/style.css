@@ -187,3 +187,15 @@ input[type = button]:hover,
     border: none;
     background-color: transparent;
 }
+
+.project-card .icon,
+.to-do-container .icon {
+    scale: 1.8;
+    display: none
+}
+
+.project-card:hover .icon,
+.to-do-container:hover .icon {
+    display: block;
+    fill: var(--accent)
+}
