@@ -202,7 +202,7 @@ body {
 }
 
 form {
-    background-color: var(--secondary);
+    background-color: white;
 
     border-radius: 10px;
     padding: 25px;
@@ -227,7 +227,7 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border: 2px solid var(--accent);
+    border: 2px solid black;
 }
 
 input[type=submit],
@@ -238,14 +238,14 @@ input[type=button] {
     border-radius: 5px;
     border: 0px;
 
-    background-color: var(--accent);
+    background-color: rgb(82, 77, 77);
     color: white;
 }
 
 input[type=submit]:hover,
 input[type=button]:hover {
-    border-color: #29462b;
-    background-color: #29462b;
+    border-color: black;
+    background-color: black;
 }
 
 .delete,
