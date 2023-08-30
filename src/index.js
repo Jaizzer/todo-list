@@ -5,6 +5,7 @@ import { setCurrentlySelectedProject } from "./js_modules/selectedProjectManager
 
 import "./style.css";
 import { createToDoAdderForm } from "./js_modules/createToDoAdderForm.js";
+import { sortBy } from "./js_modules/sortBy.js";
 
 window.addEventListener("load", () => {
 
@@ -38,3 +39,10 @@ toDoAdderButton.addEventListener("click", () => {
     const toDoAdderForm = createToDoAdderForm();
     document.body.appendChild(toDoAdderForm);
 })
+
+
+const sorter = document.querySelector("#sorter");
+sorter.addEventListener("change", () => {
+    const selectedOption = sorter.value;
+    sortBy(selectedOption);
+});
