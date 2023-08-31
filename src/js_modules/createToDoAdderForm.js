@@ -1,6 +1,5 @@
-import { createToDoCard } from "./createToDoCard.js";
+import { renderToDoItems } from "./renderToDoItems.js";
 import { getCurrentlySelectedProject } from "./selectedProjectManager.js";
-import { sortBy } from "./sortBy.js";
 import { ToDo } from "./ToDo.js"
 
 export function createToDoAdderForm() {
@@ -92,10 +91,7 @@ export function createToDoAdderForm() {
         getCurrentlySelectedProject().addToDo(toDoItem);
 
         // Render To-Do item in 'to-do' tab immediately once created.
-        document.querySelector(".to-do-tab").appendChild(createToDoCard(toDoItem));
-
-        // Arrange to-do cards in to-do-tab base on selected sorting criteria.
-        sortBy(document.querySelector("#sorter").value);
+        renderToDoItems(getCurrentlySelectedProject());
 
         formContainer.parentElement.removeChild(formContainer);
     });
