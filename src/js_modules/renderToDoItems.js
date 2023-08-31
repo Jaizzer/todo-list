@@ -3,9 +3,6 @@ import { Project } from "./Project";
 
 export function renderToDoItems(currentProject) {
 
-    // Add the parent-project name.
-    document.querySelector(".parent-project-name").textContent = currentProject.projectTitle
-
     // Access to-do container.
     const toDoTab = document.querySelector(".to-do-tab");
 
