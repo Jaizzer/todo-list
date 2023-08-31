@@ -10,6 +10,8 @@ export function createToDoCard(ToDo) {
 
     // Add reference to the ToDo.
     toDoCard.toDoReference = ToDo;
+
+    addCheckBox(toDoCard);
     
     // Create to-do title container.
     const toDoTitle = document.createElement("div");
@@ -96,4 +98,24 @@ function addViewButton(toDoCard) {
         popUpToDoInfoCard(toDoCard);
     });
     toDoCard.appendChild(viewButton);
+}
+
+function addCheckBox(toDoCard) {
+    const checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.class = "to-do-checkbox"
+
+    checkBox.addEventListener("click", () => {
+        let isToDoCompleted = toDoCard.toDoReference.completed
+        if (isToDoCompleted) {
+            toDoCard.toDoReference.completed = false;
+            toDoCard.className = "to-do-container"
+        }
+        else {
+            toDoCard.toDoReference.completed = true;
+            toDoCard.className = "to-do-container completed"
+        }
+    });
+
+    toDoCard.appendChild(checkBox)
 }
