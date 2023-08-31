@@ -121,6 +121,9 @@ function addCheckBox(toDoCard) {
             toDoCard.toDoReference.completed = true;
             toDoCard.className = "to-do-container completed"
         }
+
+        // Update changes inside parent project.
+        toDoCard.toDoReference.project.replaceToDo(toDoCard.toDoReference, toDoCard.toDoReference);
     });
 
     toDoCard.appendChild(checkBox)
