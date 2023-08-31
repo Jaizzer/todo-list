@@ -1,81 +1,44 @@
-import { renderToDoItems } from "./renderToDoItems";
-import { getCurrentlySelectedProject } from "./selectedProjectManager";
-
-export function sortBy(sortCriteria) {
-
-    // Access to-do container.
-    const toDoTab = document.querySelector(".to-do-tab");
-
-    // Get items to be sorted.
-    const itemsToBeSorted = Array.from(document.querySelector(".to-do-tab").childNodes);
+export function sort(unsortedToDoItems) {
 
     // Sorted items.
-    let sortedItems;
+    let sortedToDoItems;
 
+    // Get the sort critera.
+    const sortCriteria = document.querySelector("#sorter").value;
+    
     // Sort by due date.
     if (sortCriteria === "date-ascending") {
-        sortedItems = itemsToBeSorted.sort((ToDoCard1, ToDoCard2) => {
-
-            const ToDo1Date = new Date(ToDoCard1.toDoReference.dueDate);
-            const ToDo2Date = new Date(ToDoCard2.toDoReference.dueDate);
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+            const ToDo1Date = new Date(ToDo1.dueDate);
+            const ToDo2Date = new Date(ToDo2.dueDate);
             return ToDo1Date - ToDo2Date;
-        })
-
-        // Clear previous to-do container contents.
-        toDoTab.innerHTML = "";
-
-        // Put the sorted to-do cards.
-        sortedItems.forEach(item => {
-            toDoTab.appendChild(item);
-        })
+        });
     }
     // Sort by due date date
     else if (sortCriteria === "date-descending") {
-        sortedItems = itemsToBeSorted.sort((ToDoCard1, ToDoCard2) => {
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
 
-            const ToDo1Date = new Date(ToDoCard1.toDoReference.dueDate);
-            const ToDo2Date = new Date(ToDoCard2.toDoReference.dueDate);
+            const ToDo1Date = new Date(ToDo1.dueDate);
+            const ToDo2Date = new Date(ToDo2.dueDate);
             return ToDo2Date - ToDo1Date;
-        })
-
-        // Clear previous to-do container contents.
-        toDoTab.innerHTML = "";
-
-        // Put the sorted to-do cards.
-        sortedItems.forEach(item => {
-            toDoTab.appendChild(item);
-        })
+        });
     }
     // Sort by name ascendingly.
     else if (sortCriteria === "name-ascending") {
-        sortedItems = itemsToBeSorted.sort((ToDoCard1, ToDoCard2) => {
-            return ToDoCard1.toDoReference.title.localeCompare(ToDoCard2.toDoReference.title);
-        })
-
-        // Clear previous to-do container contents.
-        toDoTab.innerHTML = "";
-
-        // Put the sorted to-do cards.
-        sortedItems.forEach(item => {
-            toDoTab.appendChild(item);
-        })
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+            return ToDo1.title.localeCompare(ToDo2.title);
+        });
     }
     // Sort by name descendingly.
     else if (sortCriteria === "name-descending") {
-        sortedItems = itemsToBeSorted.sort((ToDoCard1, ToDoCard2) => {
-            return ToDoCard2.toDoReference.title.localeCompare(ToDoCard1.toDoReference.title);
-        })
-
-        // Clear previous to-do container contents.
-        toDoTab.innerHTML = "";
-
-        // Put the sorted to-do cards.
-        sortedItems.forEach(item => {
-            toDoTab.appendChild(item);
-        })
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+            return ToDo2.title.localeCompare(ToDo1.title);
+        });
     }
     // Don't sort if 'default'.
     else if (sortCriteria === "default") {
-        renderToDoItems(getCurrentlySelectedProject());
+        sortedToDoItems = unsortedToDoItems;
     }
+
+    return sortedToDoItems;
 }
