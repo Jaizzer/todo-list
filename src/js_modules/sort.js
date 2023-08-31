@@ -35,10 +35,15 @@ export function sort(unsortedToDoItems) {
             return ToDo2.title.localeCompare(ToDo1.title);
         });
     }
-    // Don't sort if 'default'.
-    else if (sortCriteria === "default") {
+    //Sort by time of creation (oldest to newest)
+    else if (sortCriteria === "time-created-ascending") {
         sortedToDoItems = unsortedToDoItems;
     }
+    //Sort by time of creation (newest to oldest.)
+    else if (sortCriteria === "time-created-descending") {
+        sortedToDoItems = unsortedToDoItems.reverse();
+    }
+    
 
     return sortedToDoItems;
 }
