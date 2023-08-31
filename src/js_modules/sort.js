@@ -37,13 +37,21 @@ export function sort(unsortedToDoItems) {
     }
     //Sort by time of creation (oldest to newest)
     else if (sortCriteria === "time-created-ascending") {
-        sortedToDoItems = unsortedToDoItems;
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+            const ToDo1Date = new Date(ToDo1.dateAndTimeCreated);
+            const ToDo2Date = new Date(ToDo2.dateAndTimeCreated);
+            return ToDo1Date - ToDo2Date;
+        });
     }
     //Sort by time of creation (newest to oldest.)
     else if (sortCriteria === "time-created-descending") {
-        sortedToDoItems = unsortedToDoItems.reverse();
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+            const ToDo1Date = new Date(ToDo1.dateAndTimeCreated);
+            const ToDo2Date = new Date(ToDo2.dateAndTimeCreated);
+            return ToDo2Date - ToDo1Date;
+        });
     }
-    
+
 
     return sortedToDoItems;
 }
