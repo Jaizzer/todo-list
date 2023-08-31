@@ -1,11 +1,11 @@
 import { Project } from "./js_modules/Project.js";
 import { createProjectCard } from "./js_modules/createProjectCard.js";
 import { createProjectAdderForm } from "./js_modules/createProjectAdderForm.js";
-import { setCurrentlySelectedProject } from "./js_modules/selectedProjectManager.js";
+import { getCurrentlySelectedProject, setCurrentlySelectedProject } from "./js_modules/selectedProjectManager.js";
 
 import "./style.css";
 import { createToDoAdderForm } from "./js_modules/createToDoAdderForm.js";
-import { sortBy } from "./js_modules/sortBy.js";
+import { renderToDoItems } from "./js_modules/renderToDoItems.js";
 
 window.addEventListener("load", () => {
 
@@ -43,6 +43,5 @@ toDoAdderButton.addEventListener("click", () => {
 
 const sorter = document.querySelector("#sorter");
 sorter.addEventListener("change", () => {
-    const selectedOption = sorter.value;
-    sortBy(selectedOption);
+    renderToDoItems(getCurrentlySelectedProject());
 });
