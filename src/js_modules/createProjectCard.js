@@ -35,9 +35,6 @@ export function createProjectCard(project) {
     projectCard.addEventListener("click", () => {
             // Set the currently selected project the project corresponding to project card.
         setCurrentlySelectedProject(project);
-
-        // Make the default sorting criteria "default" everytime a project card is clicked.
-        document.querySelector("#sorter").value = "default";
     })
 
     return projectCard;
