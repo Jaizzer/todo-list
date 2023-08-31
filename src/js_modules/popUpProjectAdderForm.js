@@ -2,10 +2,7 @@ import { Project } from "./Project.js";
 import { createProjectCard } from "./createProjectCard.js";
 import { setCurrentlySelectedProject } from "./selectedProjectManager.js";
 
-/**
- * @returns A form element
- */
-export function createProjectAdderForm() {
+export function popUpProjectAdderForm() {
 
     // Create form container.
     const formContainer = document.createElement("div");
@@ -51,5 +48,5 @@ export function createProjectAdderForm() {
         formContainer.parentElement.removeChild(formContainer);
     });
 
-    return formContainer;
+    document.body.appendChild(formContainer);
 }

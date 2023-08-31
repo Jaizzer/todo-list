@@ -2,7 +2,7 @@ import { renderToDoItems } from "./renderToDoItems.js";
 import { getCurrentlySelectedProject } from "./selectedProjectManager.js";
 import { ToDo } from "./ToDo.js"
 
-export function createToDoAdderForm() {
+export function popUpToDoAdderForm() {
 
     // Create form container.
     const formContainer = document.createElement("div");
@@ -96,7 +96,7 @@ export function createToDoAdderForm() {
         formContainer.parentElement.removeChild(formContainer);
     });
 
-    return formContainer;
+    document.body.appendChild(formContainer);
 }
 
 

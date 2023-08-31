@@ -1,4 +1,4 @@
-import { createProjectEditorForm } from "./createProjectEditorForm.js";
+import { popUpProjectEditorForm } from "./popUpProjectEditorForm.js";
 import { setCurrentlySelectedProject } from "./selectedProjectManager.js";
 import { Project } from "./Project.js";
  
@@ -92,7 +92,7 @@ function addEditButton(projectCard) {
                             
     // Add edit functionality to edit button by popping the "project editor form".
     editButton.addEventListener("click", () => {
-        document.body.appendChild(createProjectEditorForm(projectCard));
+        popUpProjectEditorForm(projectCard);
     });
     projectCard.appendChild(editButton);
 }

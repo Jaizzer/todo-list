@@ -1,7 +1,4 @@
-/**
- * @returns A form element
- */
-export function createProjectEditorForm(projectCard) {
+export function popUpProjectEditorForm(projectCard) {
 
     // Create form container.
     const formContainer = document.createElement("div");
@@ -50,5 +47,5 @@ export function createProjectEditorForm(projectCard) {
         formContainer.parentElement.removeChild(formContainer);
     });
 
-    return formContainer;
+    document.body.appendChild(formContainer);
 }

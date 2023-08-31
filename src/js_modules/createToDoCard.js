@@ -1,5 +1,5 @@
-import { createToDoEditorForm } from "./createToDoEditorForm.js";
 import { formatDate } from "./formatDate.js";
+import { popUpToDoEditorForm } from "./popUpToDoEditorForm.js";
 import { popUpToDoInfoCard } from "./popUpToDoInfoCard.js";
 
 export function createToDoCard(ToDo) {
@@ -73,7 +73,7 @@ function addEditButton(toDoCard) {
 
     // Add edit functionality to edit button by popping the "to-do editor form".
     editButton.addEventListener("click", () => {
-        document.body.appendChild(createToDoEditorForm(toDoCard));
+        popUpToDoEditorForm(toDoCard);
     });
     toDoCard.appendChild(editButton);
 }

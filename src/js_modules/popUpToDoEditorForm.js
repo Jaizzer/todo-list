@@ -1,7 +1,7 @@
 import { createToDoCard } from "./createToDoCard";
 import { ToDo } from "./ToDo";
 
-export function createToDoEditorForm(toDoCard) {
+export function popUpToDoEditorForm(toDoCard) {
 
     // Create form container.
     const formContainer = document.createElement("div");
@@ -106,7 +106,7 @@ export function createToDoEditorForm(toDoCard) {
         formContainer.parentElement.removeChild(formContainer);
     });
 
-    return formContainer;
+    document.body.appendChild(formContainer);
 }
 
 
