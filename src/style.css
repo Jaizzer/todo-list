@@ -152,7 +152,7 @@ body {
     border-radius: 6px;
 
     display: grid;
-    grid-template-columns: 1fr 100px 25px 25px 25px;
+    grid-template-columns: 25px 1fr 100px 25px 25px 25px;
     gap: 5px;
 
     align-content: center;
@@ -325,4 +325,8 @@ input[type=button]:hover {
 .edit:hover .icon {
     display: block;
     fill: green;
+}
+
+.to-do-container.completed {
+    background-color: rgb(173, 238, 173);
 }
