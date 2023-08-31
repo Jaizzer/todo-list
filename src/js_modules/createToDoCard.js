@@ -1,4 +1,5 @@
 import { createToDoEditorForm } from "./createToDoEditorForm.js";
+import { formatDate } from "./formatDate.js";
 import { popUpToDoInfoCard } from "./popUpToDoInfoCard.js";
 
 export function createToDoCard(ToDo) {
@@ -19,7 +20,7 @@ export function createToDoCard(ToDo) {
     // Create to-do due date container.
     const toDoDueDate = document.createElement("div");
     toDoDueDate.className = "to-do-due-date";
-    toDoDueDate.textContent = ToDo.dueDate;
+    toDoDueDate.textContent = formatDate(ToDo.dueDate);
     toDoCard.appendChild(toDoDueDate);
 
 

@@ -1,3 +1,5 @@
+import { formatDate } from "./formatDate";
+
 export function popUpToDoInfoCard(toDoCard) {
     // Create background container.
     const backgroundContainer = document.createElement("div");
@@ -37,7 +39,7 @@ export function popUpToDoInfoCard(toDoCard) {
 
     // Create info-field divs for each field
     toDoInfoContainer.appendChild(createInfoField("Title", toDoCard.toDoReference.title));
-    toDoInfoContainer.appendChild(createInfoField("Due Date", toDoCard.toDoReference.dueDate));
+    toDoInfoContainer.appendChild(createInfoField("Due Date", formatDate(toDoCard.toDoReference.dueDate)));
     toDoInfoContainer.appendChild(createInfoField("Project", toDoCard.toDoReference.project.projectTitle));
     toDoInfoContainer.appendChild(createInfoField("Description", toDoCard.toDoReference.description));
     toDoInfoContainer.appendChild(createInfoField("Priority", toDoCard.toDoReference.priority));
