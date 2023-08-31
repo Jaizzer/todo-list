@@ -1,4 +1,6 @@
 import { createToDoCard } from "./createToDoCard";
+import { renderToDoItems } from "./renderToDoItems";
+import { getCurrentlySelectedProject } from "./selectedProjectManager";
 import { ToDo } from "./ToDo";
 
 export function popUpToDoEditorForm(toDoCard) {
@@ -98,9 +100,8 @@ export function popUpToDoEditorForm(toDoCard) {
         // Replace the current ToDo item with the ToDo item with all changes applied in parent project's "toDoItems" array.
         toDoCard.toDoReference.project.replaceToDo(updatedToDoItem, toDoCard.toDoReference);
 
-        // Update corresponding to do card in DOM.
-        const updatedToDoCard = createToDoCard(updatedToDoItem);
-        document.querySelector(".to-do-tab").replaceChild(updatedToDoCard, toDoCard);
+        // Update to-do tab.
+        renderToDoItems(getCurrentlySelectedProject());
 
         // Remove the form from the DOM once submitted.
         formContainer.parentElement.removeChild(formContainer);
