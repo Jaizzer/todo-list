@@ -16,6 +16,7 @@ export class ToDo {
         this.notes = notes;
         this.project = (project !== null) ? project : null;
         this.dateAndTimeCreated = new Date().toLocaleString();
+        this.completed = false;
     }
 
     delete() {
