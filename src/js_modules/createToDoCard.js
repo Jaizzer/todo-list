@@ -12,7 +12,13 @@ export function createToDoCard(ToDo) {
     toDoCard.toDoReference = ToDo;
 
     addCheckBox(toDoCard);
-    
+
+    // Apply "completed effects" to to-do items that are completed.
+    if (toDoCard.toDoReference.completed) {
+        toDoCard.querySelector(".to-do-checkbox").checked = true;
+        toDoCard.className = "to-do-container completed";
+    }
+
     // Create to-do title container.
     const toDoTitle = document.createElement("div");
     toDoTitle.className = "to-do-title"
@@ -103,7 +109,7 @@ function addViewButton(toDoCard) {
 function addCheckBox(toDoCard) {
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
-    checkBox.class = "to-do-checkbox"
+    checkBox.className = "to-do-checkbox"
 
     checkBox.addEventListener("click", () => {
         let isToDoCompleted = toDoCard.toDoReference.completed
