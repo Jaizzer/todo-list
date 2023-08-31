@@ -1,4 +1,5 @@
 import { createToDoEditorForm } from "./createToDoEditorForm.js";
+import { popUpToDoInfoCard } from "./popUpToDoInfoCard.js";
 
 export function createToDoCard(ToDo) {
 
@@ -21,6 +22,8 @@ export function createToDoCard(ToDo) {
     toDoDueDate.textContent = ToDo.dueDate;
     toDoCard.appendChild(toDoDueDate);
 
+
+    addViewButton(toDoCard);
     addDeleteButton(toDoCard);
     addEditButton(toDoCard);
 
@@ -43,7 +46,7 @@ function addDeleteButton(toDoCard) {
 
     // Add delete functionality to delete button.
     deleteButton.addEventListener("click", () => {
-        
+
         // Delete Project (back-end)
         toDoCard.toDoReference.delete();
 
@@ -66,10 +69,30 @@ function addEditButton(toDoCard) {
                                 <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,
                                 2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
                             </svg>`;
-                            
+
     // Add edit functionality to edit button by popping the "to-do editor form".
     editButton.addEventListener("click", () => {
         document.body.appendChild(createToDoEditorForm(toDoCard));
     });
     toDoCard.appendChild(editButton);
+}
+
+function addViewButton(toDoCard) {
+
+    // Create View button.
+    const viewButton = document.createElement("button");
+    viewButton.className = "edit";
+
+    // Create Edit Icon.
+    viewButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                                <title>View ToDo Information</title>
+                                <path
+                                    d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>`;
+
+    // Add "view to-do" functionality to view button by popping a "div" containing the to-do item's info.
+    viewButton.addEventListener("click", () => {
+        popUpToDoInfoCard(toDoCard);
+    });
+    toDoCard.appendChild(viewButton);
 }
