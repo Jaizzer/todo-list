@@ -37,7 +37,7 @@ function createSorter() {
 
     // Create the data values of options to be selected.
     const sortingOptions = [
-        { value: "time-created-ascending", text: "Created (Oldest to Newest)", selected: true },
+        { value: "time-created-ascending", text: "Created (Oldest to Newest)" },
         { value: "time-created-descending", text: "Created (Newest to Oldest)" },
         { value: "date-ascending", text: "Date (ascending)" },
         { value: "date-descending", text: "Date (descending)" },
@@ -54,11 +54,6 @@ function createSorter() {
 
         // Add option text-content.
         option.textContent = sortingOption.text;
-
-        // Condition to set the default selected option.
-        if (optionData.selected) {
-            option.setAttribute("selected", "selected");
-        }
 
         // Append the option to sorter select element.
         sorter.appendChild(option);
