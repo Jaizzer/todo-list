@@ -64,7 +64,7 @@ function createSorter() {
         option.textContent = sortingOption.text;
 
         // Make the currently selected option of current sorter carry over to the new sorter.
-        option.selected = sortingOption.value === currentSortOption.value;
+        option.selected = sortingOption.value === currentSortOption;
 
         // Append the option to sorter select element.
         sorter.appendChild(option);
