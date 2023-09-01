@@ -15,12 +15,12 @@ export function renderToDoWindow(project) {
 function createParentProjectNameCard(project) {
     const parentProjectNameCard = document.createElement("div");
     parentProjectNameCard.textContent = project.projectTitle;
-    
+
     return parentProjectNameCard;
 }
 
 function createSorter() {
-    
+
     // Create div to contain the sorter.
     const sorterContainer = document.querySelector("div");
     sorterContainer.className = "sorter-container"
@@ -45,13 +45,13 @@ function createSorter() {
         { value: "name-descending", text: "Name (descending)" }
     ]
 
-     // Get currently selected option from current sorter.
-     let currentSortOption = document.querySelector("#sorter").value;
+    // Get currently selected option from current sorter.
+    let currentSortOption = document.querySelector("#sorter").value;
 
-     // If this is the first sorter to be rendered, set the currently selected option to "Created (Oldest to Newest)".
-     if (!currentSortOption) {
-         currentSortOption = sortingOptions.find(sortingOption => sortingOption.text === "Created (Oldest to Newest)");
-     }
+    // If this is the first sorter to be rendered, set the currently selected option to "Created (Oldest to Newest)".
+    if (!currentSortOption) {
+        currentSortOption = sortingOptions.find(sortingOption => sortingOption.text === "Created (Oldest to Newest)");
+    }
 
     sortingOptions.forEach(sortingOption => {
         // Create option element.
@@ -70,7 +70,7 @@ function createSorter() {
         else {
             option.setAttribute("selected", "false");
         }
-        
+
         // Append the option to sorter select element.
         sorter.appendChild(option);
     })
