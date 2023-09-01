@@ -27,7 +27,7 @@ function createSorter() {
 
     // Create a select element that will serve as a way to choose sorting criteria.
     const sorter = document.createElement("select");
-    sorter.id = "#sorter";
+    sorter.id = "sorter";
     sorterContainer.appendChild(sorter);
 
     // Create the label for the sorter.
