@@ -22,7 +22,7 @@ function createParentProjectNameCard(project) {
 function createSorter() {
 
     // Create div to contain the sorter.
-    const sorterContainer = document.querySelector("div");
+    const sorterContainer = document.createElement("div");
     sorterContainer.className = "sorter-container"
 
     // Create a select element that will serve as a way to choose sorting criteria.
@@ -31,7 +31,7 @@ function createSorter() {
     sorterContainer.appendChild(sorter);
 
     // Create the label for the sorter.
-    const label = document.querySelector("label");
+    const label = document.createElement("label");
     label.setAttribute("for", sorter.id);
     label.textContent = "Sort by:";
 
