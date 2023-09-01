@@ -3,11 +3,11 @@
 export function renderToDoWindow(project) {
     const toDoWindow = document.querySelector(".to-do-window");
 
-    // Add the current parent project card to the to-do window.
-    toDoWindow.appendChild(createParentProjectNameCard(project));
+    // Create the current parent project card to the to-do window.
+    const parentProjectNameCard = createParentProjectNameCard(project);
 
-    // Add the sorter to the to-do window.
-    toDoWindow.appendChild(createSorter());
+    // Create the sorter.
+    const sorter = createSorter();
 }
 
 
