@@ -1,4 +1,4 @@
-import { renderToDoItems } from "./renderToDoItems.js";
+import { renderToDoWindow } from "./renderToDoWindow.js";
 import { getCurrentlySelectedProject } from "./selectedProjectManager.js";
 import { ToDo } from "./ToDo.js"
 
@@ -91,7 +91,7 @@ export function popUpToDoAdderForm() {
         getCurrentlySelectedProject().addToDo(toDoItem);
 
         // Render To-Do item in 'to-do' tab immediately once created.
-        renderToDoItems(getCurrentlySelectedProject());
+        renderToDoWindow(getCurrentlySelectedProject());
 
         formContainer.parentElement.removeChild(formContainer);
     });
