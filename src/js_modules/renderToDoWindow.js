@@ -5,7 +5,7 @@ import { sort } from "./sort";
 
 export function renderToDoWindow(currentProject) {
     // Access current to do window.
-    const currentToDoWindow = document.querySelector(".to-do-tab");
+    const currentToDoWindow = document.querySelector(".to-do-window");
 
     // Create a new to do window.
     const newToDoWindow = document.createElement("div");
