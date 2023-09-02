@@ -16,6 +16,12 @@ export function renderToDoWindow(currentProject) {
 
     // Create the to-do adder button.
     const toDoAdderButton = createToDoAdderButton();
+
+    // Append all created elements to to-do window.
+    toDoWindow.appendChild(currentProjectNameCard);
+    toDoWindow.appendChild(sorter);
+    toDoWindow.appendChild(toDoTab);
+    toDoWindow.appendChild(toDoAdderButton);
 }
 
 
