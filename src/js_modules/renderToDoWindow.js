@@ -9,6 +9,9 @@ export function renderToDoWindow(currentProject) {
 
     // Create the sorter.
     const sorter = createSorter();
+
+    // Create the to-do tab.
+    const toDoTab = createToDoTab();
 }
 
 
