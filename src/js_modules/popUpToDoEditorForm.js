@@ -93,11 +93,16 @@ export function popUpToDoEditorForm(toDoCard) {
         const toDoPriority = document.querySelector("#priority").value;
         const toDoNotes = document.querySelector("#notes").value;
 
-        // Create a ToDo item with all changes applied.
-        const updatedToDoItem = new ToDo(...[toDoTitle, toDoDescription, toDoDueDate, toDoPriority, toDoNotes])
-
+        // Update current to do.
+        toDoCard.toDoReference.title = toDoTitle;
+        toDoCard.toDoReference.description = toDoDescription;
+        toDoCard.toDoReference.dueDate = toDoDueDate;
+        toDoCard.toDoReference.priority = toDoPriority;
+        toDoCard.toDoReference.notes = toDoNotes;
+        toDoCard.toDoReference.dateAndTimeCreated = toDoCard.toDoReference.dateAndTimeCreated;
+        
         // Replace the current ToDo item with the ToDo item with all changes applied in parent project's "toDoItems" array.
-        toDoCard.toDoReference.project.replaceToDo(updatedToDoItem, toDoCard.toDoReference);
+        toDoCard.toDoReference.project.replaceToDo(toDoCard.toDoReference, toDoCard.toDoReference);
 
         // Update to-do tab.
         renderToDoWindow(getCurrentlySelectedProject());
