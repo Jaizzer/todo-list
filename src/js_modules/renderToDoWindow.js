@@ -105,8 +105,5 @@ function createToDoTab(currentProject) {
         toDoTab.appendChild(createToDoCard(toDoItem));
     });
 
-
-   
-
     return toDoTab;
 }
