@@ -71,6 +71,12 @@ function createSorter() {
         sorter.appendChild(option);
     })
 
+    // Re-render to-do tab so that to-do item's new sort critera will be refrected
+    sorter.addEventListener("change", () => {
+        const currentToDoTab = document.querySelector(".to-do-tab");
+        currentToDoTab.parentElement.replaceChild(createToDoTab(currentProject), currentToDoTab);
+    })
+
     return sorter;
 }
 
