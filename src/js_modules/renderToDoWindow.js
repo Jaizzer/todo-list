@@ -1,11 +1,11 @@
 import { Project } from "./Project";
 import { createToDoCard } from "./createToDoCard";
 
-export function renderToDoWindow(project) {
+export function renderToDoWindow(currentProject) {
     const toDoWindow = document.querySelector(".to-do-window");
 
     // Create the current parent project card to the to-do window.
-    const parentProjectNameCard = createParentProjectNameCard(project);
+    const currentProjectNameCard = createCurrentProjectNameCard(currentProject);
 
     // Create the sorter.
     const sorter = createSorter();
@@ -13,11 +13,11 @@ export function renderToDoWindow(project) {
 
 
 // Create a card containing the name of the current parent project.
-function createParentProjectNameCard(project) {
-    const parentProjectNameCard = document.createElement("div");
-    parentProjectNameCard.textContent = project.projectTitle;
+function createCurrentProjectNameCard(currentProject) {
+    const currentProjectNameCard = document.createElement("div");
+    currentProjectNameCard.textContent = currentProject.projectTitle;
 
-    return parentProjectNameCard;
+    return currentProjectNameCard;
 }
 
 function createSorter() {
