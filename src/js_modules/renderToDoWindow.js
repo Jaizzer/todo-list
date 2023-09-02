@@ -36,7 +36,7 @@ function createCurrentProjectNameCard(currentProject) {
     return currentProjectNameCard;
 }
 
-function createSorter() {
+function createSorter(currentProject) {
 
     // Create div to contain the sorter.
     const sorterContainer = document.createElement("div");
