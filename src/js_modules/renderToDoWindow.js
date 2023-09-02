@@ -79,9 +79,6 @@ function createToDoTab(currentProject) {
     // Create to-do tab.
     const toDoTab = document.createElement("div");
     toDoTab.className = "to-do-tab";
-    
-    // Clear previous to-do container contents.
-    toDoTab.innerHTML = "";
 
     // Array for storing all unsorted ToDo items.
     let unsortedToDoItems = [];
