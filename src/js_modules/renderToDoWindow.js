@@ -4,28 +4,32 @@ import { popUpToDoAdderForm } from "./popUpToDoAdderForm";
 import { sort } from "./sort";
 
 export function renderToDoWindow(currentProject) {
-    const toDoWindow = document.querySelector(".to-do-window");
+    // Access current to do window.
+    const currentToDoWindow = document.querySelector(".to-do-tab");
 
-    // Clear previous to-do window contents.
-    toDoWindow.innerHTML = "";
+    // Create a new to do window.
+    const newToDoWindow = document.createElement("div");
 
     // Create the current parent project card to the to-do window.
     const currentProjectNameCard = createCurrentProjectNameCard(currentProject);
 
     // Create the sorter.
-    const sorter = createSorter();
+    const sorter = createSorter(currentProject);
 
     // Create the to-do tab.
-    const toDoTab = createToDoTab();
+    const toDoTab = createToDoTab(currentProject);
 
     // Create the to-do adder button.
     const toDoAdderButton = createToDoAdderButton();
 
-    // Append all created elements to to-do window.
-    toDoWindow.appendChild(currentProjectNameCard);
-    toDoWindow.appendChild(sorter);
-    toDoWindow.appendChild(toDoTab);
-    toDoWindow.appendChild(toDoAdderButton);
+    // Append all created elements to the new to-do window.
+    newToDoWindow.appendChild(currentProjectNameCard);
+    newToDoWindow.appendChild(sorter);
+    newToDoWindow.appendChild(toDoTab);
+    newToDoWindow.appendChild(toDoAdderButton);
+
+    // Replace current to do window with new to do window.
+    currentToDoWindow.parentElement.replaceChild(newToDoWindow, currentToDoWindow);
 }
 
 
