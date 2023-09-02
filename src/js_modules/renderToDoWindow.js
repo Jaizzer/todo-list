@@ -1,6 +1,7 @@
 import { Project } from "./Project";
 import { createToDoCard } from "./createToDoCard";
 import { popUpToDoAdderForm } from "./popUpToDoAdderForm";
+import { sort } from "./sort";
 
 export function renderToDoWindow(currentProject) {
     const toDoWindow = document.querySelector(".to-do-window");
