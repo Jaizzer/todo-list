@@ -1,5 +1,3 @@
-import { createToDoCard } from "./createToDoCard";
-import { renderToDoItems } from "./renderToDoItems";
 import { getCurrentlySelectedProject } from "./selectedProjectManager";
 import { ToDo } from "./ToDo";
 
