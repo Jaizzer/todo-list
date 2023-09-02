@@ -72,12 +72,16 @@ function createSorter(currentProject) {
     // Get currently selected option from current sorter.
     let currentSorter = document.querySelector("#sorter");
     
-    // Declare variable to store current sort option.
-    let currentSortOption;
-
-    // If this is the first sorter to be rendered, set the currently selected option to "Created (Oldest to Newest)".
+    // Selected option of the new sorter to be created.
+    let newCurrentSortOption;
+    
+    // If this is the first sorter to be rendered, set the new sorter selected option to "Created (Oldest to Newest)".
     if (!currentSorter) {
-        currentSortOption = sortingOptions.find(sortingOption => sortingOption.text === "Created (Oldest to Newest)");
+        newCurrentSortOption = sortingOptions.find(sortingOption => sortingOption.text === "Created (Oldest to Newest)");
+    }
+    // If this is not the first sorter, set the new sorter selected option to the current sorter selected option.
+    else {
+        newCurrentSortOption = currentSorter.value;
     }
 
     sortingOptions.forEach(sortingOption => {
@@ -91,7 +95,7 @@ function createSorter(currentProject) {
         option.textContent = sortingOption.text;
 
         // Make the currently selected option of current sorter carry over to the new sorter.
-        option.selected = sortingOption.value === currentSortOption;
+        option.selected = sortingOption.value === newCurrentSortOption;
 
         // Append the option to sorter select element.
         sorter.appendChild(option);
