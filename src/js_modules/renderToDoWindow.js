@@ -63,10 +63,13 @@ function createSorter() {
     ]
 
     // Get currently selected option from current sorter.
-    let currentSortOption = document.querySelector("#sorter").value;
+    let currentSorter = document.querySelector("#sorter");
+    
+    // Declare variable to store current sort option.
+    let currentSortOption;
 
     // If this is the first sorter to be rendered, set the currently selected option to "Created (Oldest to Newest)".
-    if (!currentSortOption) {
+    if (!currentSorter) {
         currentSortOption = sortingOptions.find(sortingOption => sortingOption.text === "Created (Oldest to Newest)");
     }
 
