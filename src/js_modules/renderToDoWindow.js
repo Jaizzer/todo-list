@@ -9,6 +9,7 @@ export function renderToDoWindow(currentProject) {
 
     // Create a new to do window.
     const newToDoWindow = document.createElement("div");
+    newToDoWindow.className = "to-do-window";
 
     // Create the current parent project card to the to-do window.
     const currentProjectNameCard = createCurrentProjectNameCard(currentProject);
@@ -36,6 +37,7 @@ export function renderToDoWindow(currentProject) {
 // Create a card containing the name of the current parent project.
 function createCurrentProjectNameCard(currentProject) {
     const currentProjectNameCard = document.createElement("div");
+    currentProjectNameCard.className = "parent-project-name"
     currentProjectNameCard.textContent = currentProject.projectTitle;
 
     return currentProjectNameCard;
@@ -45,7 +47,7 @@ function createSorter(currentProject) {
 
     // Create div to contain the sorter.
     const sorterContainer = document.createElement("div");
-    sorterContainer.className = "sorter-container"
+    sorterContainer.className = "sort-container"
 
     // Create a select element that will serve as a way to choose sorting criteria.
     const sorter = document.createElement("select");
