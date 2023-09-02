@@ -13,6 +13,9 @@ export function renderToDoWindow(currentProject) {
 
     // Create the to-do tab.
     const toDoTab = createToDoTab();
+
+    // Create the to-do adder button.
+    const toDoAdderButton = createToDoAdderButton();
 }
 
 
