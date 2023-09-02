@@ -1,3 +1,4 @@
+import { renderToDoWindow } from "./renderToDoWindow";
 import { getCurrentlySelectedProject } from "./selectedProjectManager";
 import { ToDo } from "./ToDo";
 
@@ -99,7 +100,7 @@ export function popUpToDoEditorForm(toDoCard) {
         toDoCard.toDoReference.project.replaceToDo(updatedToDoItem, toDoCard.toDoReference);
 
         // Update to-do tab.
-        renderToDoItems(getCurrentlySelectedProject());
+        renderToDoWindow(getCurrentlySelectedProject());
 
         // Remove the form from the DOM once submitted.
         formContainer.parentElement.removeChild(formContainer);
