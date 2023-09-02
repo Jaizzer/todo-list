@@ -100,6 +100,7 @@ export function popUpToDoEditorForm(toDoCard) {
         toDoCard.toDoReference.priority = toDoPriority;
         toDoCard.toDoReference.notes = toDoNotes;
         toDoCard.toDoReference.dateAndTimeCreated = toDoCard.toDoReference.dateAndTimeCreated;
+        toDoCard.toDoReference.dateModified = new Date().toLocaleString();
         
         // Replace the current ToDo item with the ToDo item with all changes applied in parent project's "toDoItems" array.
         toDoCard.toDoReference.project.replaceToDo(toDoCard.toDoReference, toDoCard.toDoReference);
