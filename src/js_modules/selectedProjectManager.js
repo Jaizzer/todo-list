@@ -1,14 +1,11 @@
-import { renderToDoItems } from "./renderToDoItems";
+import { renderToDoWindow } from "./renderToDoWindow";
 
 let currentlySelectedProject = null;
 
 export function setCurrentlySelectedProject(project) {
     currentlySelectedProject = project;
 
-     // Add the parent-project name.
-    document.querySelector(".parent-project-name").textContent = currentlySelectedProject.projectTitle;
-
-    renderToDoItems(currentlySelectedProject);
+    renderToDoWindow(currentlySelectedProject);
 }
 
 export function getCurrentlySelectedProject() {
