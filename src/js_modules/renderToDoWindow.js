@@ -72,3 +72,14 @@ function createSorter() {
 
     return sorter;
 }
+
+function createToDoTab(currentProject) {
+
+    // Create to-do tab.
+    const toDoTab = document.createElement("div");
+    toDoTab.className = "to-do-tab";
+
+   
+
+    return toDoTab;
+}
