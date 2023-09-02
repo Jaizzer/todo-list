@@ -8,8 +8,9 @@ export function sort(unsortedToDoItems) {
     // Array to hold sorted items.
     let sortedToDoItems;
 
-    // Get the sorting criteria selected by the user.
-    const sortCriteria = document.querySelector("#sorter").value;
+    // Get the current sorter.
+    const currentSorter = document.querySelector("#sorter");
+    const sortCriteria = (currentSorter === null) ? "date-ascending" : currentSorter.value;
 
     // Sort by due date in ascending order.
     if (sortCriteria === "date-ascending") {
