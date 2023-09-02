@@ -5,6 +5,9 @@ import { popUpToDoAdderForm } from "./popUpToDoAdderForm";
 export function renderToDoWindow(currentProject) {
     const toDoWindow = document.querySelector(".to-do-window");
 
+    // Clear previous to-do window contents.
+    toDoWindow.innerHTML = "";
+
     // Create the current parent project card to the to-do window.
     const currentProjectNameCard = createCurrentProjectNameCard(currentProject);
 
