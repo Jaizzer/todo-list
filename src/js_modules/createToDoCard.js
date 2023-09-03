@@ -1,6 +1,7 @@
 import { formatDate } from "./formatDate.js";
 import { popUpToDoEditorForm } from "./popUpToDoEditorForm.js";
 import { popUpToDoInfoCard } from "./popUpToDoInfoCard.js";
+import { getCurrentlySelectedProject } from "./selectedProjectManager.js";
 
 export function createToDoCard(ToDo) {
 
@@ -116,11 +117,17 @@ function addCheckBox(toDoCard) {
         if (isToDoCompleted) {
             toDoCard.toDoReference.completed = false;
             toDoCard.className = "to-do-container"
+
+            // If a 'completed' to-do is set to 'unfinished' to do, remove it from the "Completed" project's to-do window.
+            if (getCurrentlySelectedProject().projectId === "completed-project") {
+                toDoCard.parentElement.removeChild(toDoCard);
+            }
         }
         else {
             toDoCard.toDoReference.completed = true;
             toDoCard.className = "to-do-container completed"
         }
+
 
         // Update changes inside parent project.
         toDoCard.toDoReference.project.replaceToDo(toDoCard.toDoReference, toDoCard.toDoReference);
