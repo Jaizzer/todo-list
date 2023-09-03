@@ -39,7 +39,8 @@ export function popUpProjectAdderForm() {
         const projectCard = createProjectCard(project)
 
         // Render new project to DOM by appending 
-        document.querySelector(".projects-tab").appendChild(projectCard);
+        const createdProjectsContainer = document.querySelector(".created-projects-container");
+        createdProjectsContainer.insertBefore(projectCard, createdProjectsContainer.querySelector("button.project-adder"));
 
         // Make the newly created project as the currently selected project.
         setCurrentlySelectedProject(project);
