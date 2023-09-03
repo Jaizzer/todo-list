@@ -67,7 +67,7 @@ body {
     align-content: center;
 }
 
-.project-card:not(#home-project),
+.project-card:not(#home-project, #completed-project),
 .project-adder {
     margin-left: 10px;
 
@@ -80,14 +80,15 @@ body {
     color: white;
 }
 
-#home-project {
+#home-project, #completed-project {
     justify-content: start;
     grid-template-columns: auto 1fr;
 
     color: white;
 }
 
-#home-project .icon {
+#home-project .icon,
+#completed-project .icon {
     display: block;
 
     scale: 1;
