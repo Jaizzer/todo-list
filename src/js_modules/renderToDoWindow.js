@@ -27,7 +27,11 @@ export function renderToDoWindow(currentProject) {
     newToDoWindow.appendChild(currentProjectNameCard);
     newToDoWindow.appendChild(sorter);
     newToDoWindow.appendChild(toDoTab);
-    newToDoWindow.appendChild(toDoAdderButton);
+    
+    // Only add the to-do adder button to non "Complete" projects.
+    if (currentProject.projectId !== "completed-project") {
+        newToDoWindow.appendChild(toDoAdderButton);
+    }
 
     // Replace current to do window with new to do window.
     currentToDoWindow.parentElement.replaceChild(newToDoWindow, currentToDoWindow);
