@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
     Project.loadProjects();
 
     // Set currently selected project to "Home" when page loads.
-    setCurrentlySelectedProject(Project.home);    
+    setCurrentlySelectedProject(Project.home);
 
     // Load all projects to projects-tab.
     const projectsTab = document.querySelector(".projects-tab")
@@ -40,4 +40,25 @@ window.addEventListener("load", () => {
 const projectAdderButton = document.querySelector(".project-adder");
 projectAdderButton.addEventListener("click", () => {
     popUpProjectAdderForm();
+})
+
+
+// Add feature to the Project's drop down button in dashboard.
+const projectDropdownButton = document.querySelector(".created-projects-dropdown");
+projectDropdownButton.addEventListener("click", () => {
+
+    // Access created projects container.
+    const createdProjectsContainer = document.querySelector(".created-projects-container");
+
+    // Get all created project container's classes.
+    const classes = createdProjectsContainer.className.split(' ');
+
+    // If drop down button is clicked when created projects container is "active", make it "inactive".
+    if (classes.includes("active")) {
+        createdProjectsContainer.classList.replace("active", "inactive");
+    }
+    // If drop down button is clicked when created projects container is "inactive", make it "active".
+    else if (classes.includes("inactive")) {
+        createdProjectsContainer.classList.replace("inactive", "active");
+    }
 })
