@@ -126,7 +126,16 @@ function createToDoTab(currentProject) {
                 unsortedToDoItems.push(toDoItem);
             }));
     }
-    // If current project is not "Home", only render its respective ToDo items.
+    // Render all completed ToDos from different Projecrs if the currently selected project is "Completed"
+    else if (currentProject.projectId === "completed-project" ) {
+        Project.projects.forEach(project => project.toDoItems
+            .forEach(toDoItem => {
+                if (toDoItem.completed) {
+                    unsortedToDoItems.push(toDoItem);
+                }
+            }));
+    }
+    // If current project is not "Home" and not "Completed", only render its respective ToDo items.
     else {
         currentProject.toDoItems.forEach(toDoItem => {
             unsortedToDoItems.push(toDoItem);
