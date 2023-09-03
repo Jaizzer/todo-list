@@ -1,6 +1,5 @@
 import { renderToDoWindow } from "./renderToDoWindow";
 import { getCurrentlySelectedProject } from "./selectedProjectManager";
-import { ToDo } from "./ToDo";
 
 export function popUpToDoEditorForm(toDoCard) {
 
