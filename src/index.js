@@ -30,7 +30,8 @@ window.addEventListener("load", () => {
             defaultProjectsContainer.appendChild(projectCard);
         }
         else {
-            createdProjectsContainer.appendChild(projectCard);
+            // Insert project card inside crated projects container before the "project-adder" button.
+            createdProjectsContainer.insertBefore(projectCard, createdProjectsContainer.querySelector(".project-adder"));
         }
     })
 })
