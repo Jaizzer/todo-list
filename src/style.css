@@ -56,6 +56,14 @@ body {
     gap: 10px;
 }
 
+
+.created-projects-container.inactive {
+    display: none;
+}
+.created-projects-container.active {
+    display: block;
+}
+
 .project-card {
     padding: 5px;
 
