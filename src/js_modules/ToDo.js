@@ -8,16 +8,16 @@
  * @param {string} notes - Additional notes or comments related to the to-do item.
  */
 export class ToDo {
-    constructor(title, description, dueDate, priority, notes, project = null, completed=null, dateAndTimeCreated=null, dateModified=null) {
+    constructor(title, description, dueDate, priority, notes, completed=null, dateAndTimeCreated=null, dateModified=null, project = null) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
         this.notes = notes;
-        this.project = (project !== null) ? project : null;
-        this.dateAndTimeCreated = (dateAndTimeCreated !== null) ? dateAndTimeCreated : new Date().toLocaleString();
         this.completed = (completed !== null) ? completed : false;
+        this.dateAndTimeCreated = (dateAndTimeCreated !== null) ? dateAndTimeCreated : new Date().toLocaleString();
         this.dateModified = (dateModified !== null) ? dateModified : null;
+        this.project = (project !== null) ? project : null;
     }
 
     delete() {
