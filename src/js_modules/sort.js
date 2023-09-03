@@ -10,7 +10,9 @@ export function sort(unsortedToDoItems) {
 
     // Get the current sorter.
     const currentSorter = document.querySelector("#sorter");
-    const sortCriteria = (currentSorter === null) ? "date-ascending" : currentSorter.value;
+
+    // If there is no current sorter set the sort criteria to 'date-created-descending' by default.
+    const sortCriteria = (currentSorter === null) ? "time-created-ascending" : currentSorter.value;
 
     // Sort by due date in ascending order.
     if (sortCriteria === "date-ascending") {
