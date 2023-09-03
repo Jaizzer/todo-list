@@ -42,9 +42,10 @@ export class Project {
                 project.toDoItems.forEach(toDoItem => toDoItem.project = project);
             });
         }
-        // If there is no projects to be load, create default "Home" project.
+        // If there is no projects to be load, create default "Home" project and "Completed" project.
         else {
             new Project("Home", null, "home-project");
+            new Project("Completed", null, "completed-project");
         }
 
         // Put home project to static variable.
