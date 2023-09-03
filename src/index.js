@@ -15,11 +15,23 @@ window.addEventListener("load", () => {
 
     // Load all projects to projects-tab.
     const projectsTab = document.querySelector(".projects-tab")
+
+    // Acces "default-projects" container.
+    const defaultProjectsContainer = projectsTab.querySelector(".default-projects-container");
+
+    // Access "created-projects" container.
+    const createdProjectsContainer = projectsTab.querySelector(".created-projects-container");
+
     Project.projects.forEach(project => {
 
         const projectCard = createProjectCard(project)
 
-        projectsTab.appendChild(projectCard);
+        if (project.projectId === "home-project" || project.projectId === "completed-project") {
+            defaultProjectsContainer.appendChild(projectCard);
+        }
+        else {
+            createdProjectsContainer.appendChild(projectCard);
+        }
     })
 })
 
