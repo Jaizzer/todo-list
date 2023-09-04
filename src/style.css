@@ -76,6 +76,10 @@ body {
     align-content: center;
 }
 
+.project-card button {
+    height: 20px;
+}
+
 .project-card:hover,
 .project-adder:hover {
     background-color: grey;
