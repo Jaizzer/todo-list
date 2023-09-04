@@ -57,6 +57,11 @@ body {
 }
 
 
+.default-projects-container {
+    display: grid;
+    gap: 10px;
+}
+
 .created-projects-container.inactive {
     display: none;
 }
