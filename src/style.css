@@ -82,9 +82,7 @@ body {
 }
 
 
-.project-card:not(#home-project, #completed-project, #created-projects-dropdown),
-.project-adder {
-
+.created-projects-container.active > *{
 
     margin-left: 10px;
 
