@@ -85,7 +85,6 @@ body {
 .project-card:not(#home-project, #completed-project, #created-projects-dropdown),
 .project-adder {
 
-    width: 100%;
 
     margin-left: 10px;
 
