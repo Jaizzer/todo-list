@@ -75,7 +75,8 @@ body {
     align-content: center;
 }
 
-.project-card:not(#home-project, #completed-project),
+
+.project-card:not(#home-project, #completed-project, #created-projects-dropdown),
 .project-adder {
     margin-left: 10px;
 
@@ -88,7 +89,13 @@ body {
     color: white;
 }
 
-#home-project, #completed-project {
+#home-project, 
+#completed-project,
+#created-projects-dropdown {
+
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
     justify-content: start;
     grid-template-columns: auto 1fr;
 
@@ -96,7 +103,8 @@ body {
 }
 
 #home-project .icon,
-#completed-project .icon {
+#completed-project .icon,
+#created-projects-dropdown .icon {
     display: block;
 
     scale: 1;
@@ -104,6 +112,16 @@ body {
     width: 20px;
     height: 20px;
 
+    fill: white;
+}
+
+#created-projects-dropdown .icon.dropdown {
+    fill: black;
+    height: 17px;
+    width: 17px;
+}
+
+#created-projects-dropdown:hover .icon.dropdown {
     fill: white;
 }
 
