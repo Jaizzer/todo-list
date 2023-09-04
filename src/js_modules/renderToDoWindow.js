@@ -141,6 +141,20 @@ function createToDoTab(currentProject) {
                 }
             }));
     }
+    // Render all Today ToDos from different Projecrs if the currently selected project is "Today"
+    else if (currentProject.projectId === "today-project" ) {
+        Project.projects.forEach(project => project.toDoItems
+            .forEach(toDoItem => {
+                // Get current date.
+                const currentDate = new Date();
+
+                // Format current date similar to the date structure of 'dueDate' property of ToDo object.
+                const formattedCurrentDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
+                if (toDoItem.dueDate === formattedCurrentDate) {
+                    unsortedToDoItems.push(toDoItem);
+                }
+            }));
+    }
     // If current project is not "Home" and not "Completed", only render its respective ToDo items.
     else {
         currentProject.toDoItems.forEach(toDoItem => {
