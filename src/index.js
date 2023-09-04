@@ -44,7 +44,7 @@ projectAdderButton.addEventListener("click", () => {
 
 
 // Add feature to the Project's drop down button in dashboard.
-const projectDropdownButton = document.querySelector(".created-projects-dropdown");
+const projectDropdownButton = document.querySelector("#created-projects-dropdown");
 projectDropdownButton.addEventListener("click", () => {
 
     // Access created projects container.
