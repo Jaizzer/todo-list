@@ -75,6 +75,11 @@ body {
     align-content: center;
 }
 
+.project-card:hover,
+.project-adder:hover {
+    background-color: grey;
+}
+
 
 .project-card:not(#home-project, #completed-project, #created-projects-dropdown),
 .project-adder {
