@@ -28,6 +28,14 @@ export function createProjectCard(project) {
         projectCard.appendChild(completedIcon);
     }
 
+    // Add home icon to home-project.
+    if (project.projectId === "today-project") {
+        const todayIcon = document.createElement("div");
+        todayIcon.className = "icon-container"
+        todayIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><title>white-balance-sunny</title><path d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13" /></svg>`;
+        projectCard.appendChild(todayIcon);
+    }
+
     // Put project title inside the project card.
     const projectTitle = document.createElement("div");
     projectTitle.className = "project-name"
@@ -35,7 +43,7 @@ export function createProjectCard(project) {
     projectCard.appendChild(projectTitle);
 
     // Only add feature buttons to "non-Home" projects.
-    if (project.projectId !== "home-project" && project.projectId !== "completed-project") {
+    if (project.projectId !== "home-project" && project.projectId !== "completed-project" && project.projectId !== "today-project") {
         addDeleteButton(projectCard);
         addEditButton(projectCard);
     }
@@ -66,7 +74,7 @@ function addDeleteButton(projectCard) {
     deleteButton.addEventListener("click", (event) => {
 
         event.stopPropagation();
-        
+
         // Delete Project (back-end)
         projectCard.projectReference.delete();
 
@@ -75,7 +83,7 @@ function addDeleteButton(projectCard) {
 
         // Make "Home" project the currently selected project when current project is deleted.
         setCurrentlySelectedProject(Project.home);
-        
+
         // Delete Project (front-end)
         projectCard.parentNode.removeChild(projectCard);
 
@@ -97,7 +105,7 @@ function addEditButton(projectCard) {
                                 <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,
                                 2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
                             </svg>`;
-                            
+
     // Add edit functionality to edit button by popping the "project editor form".
     editButton.addEventListener("click", () => {
         popUpProjectEditorForm(projectCard);
