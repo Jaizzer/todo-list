@@ -115,7 +115,6 @@ body {
 #created-projects-dropdown .icon {
     display: block;
 
-    scale: 1;
 
     width: 20px;
     height: 20px;
@@ -337,7 +336,6 @@ input[type=button]:hover {
 
 .project-card .icon,
 .to-do-container .icon {
-    scale: 1.8;
     display: none
 }
 
