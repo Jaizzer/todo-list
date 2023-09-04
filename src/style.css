@@ -335,7 +335,9 @@ input[type=button]:hover {
 
 .project-card .icon,
 .to-do-container .icon {
-    display: none
+    display: none;
+    height: 16px;
+    width: 16px;
 }
 
 .project-card:hover .icon {
