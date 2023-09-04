@@ -58,6 +58,64 @@ export function sort(unsortedToDoItems) {
             return ToDo2Date - ToDo1Date;
         });
     }
+    // Sort by priority level (ascending) 
+    else if (sortCriteria === "priority-ascending") {
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+
+            let toDo1PriorityLevel;
+            switch (ToDo1.priority) {
+                case "High":
+                    toDo1PriorityLevel = 3;
+                    break;
+                case "Medium":
+                    toDo1PriorityLevel = 2;
+                case "Low":
+                    toDo1PriorityLevel = 1;
+            }
+
+            let toDo2PriorityLevel;
+            switch (ToDo2.priority) {
+                case "High":
+                    toDo2PriorityLevel = 3;
+                    break;
+                case "Medium":
+                    toDo2PriorityLevel = 2;
+                case "Low":
+                    toDo2PriorityLevel = 1;
+            }
+
+            return toDo1PriorityLevel - toDo2PriorityLevel;
+        })
+    }
+    // Sort by priority level (descending) 
+    else if (sortCriteria === "priority-descending") {
+        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+
+            let toDo1PriorityLevel;
+            switch (ToDo1.priority) {
+                case "High":
+                    toDo1PriorityLevel = 3;
+                    break;
+                case "Medium":
+                    toDo1PriorityLevel = 2;
+                case "Low":
+                    toDo1PriorityLevel = 1;
+            }
+
+            let toDo2PriorityLevel;
+            switch (ToDo2.priority) {
+                case "High":
+                    toDo2PriorityLevel = 3;
+                    break;
+                case "Medium":
+                    toDo2PriorityLevel = 2;
+                case "Low":
+                    toDo2PriorityLevel = 1;
+            }
+
+            return toDo2PriorityLevel - toDo1PriorityLevel;
+        })
+    }
 
     // Return the array of sorted to-do items.
     return sortedToDoItems;

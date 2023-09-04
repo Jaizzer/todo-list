@@ -70,7 +70,9 @@ function createSorter(currentProject) {
         { value: "date-ascending", text: "Date (ascending)" },
         { value: "date-descending", text: "Date (descending)" },
         { value: "name-ascending", text: "Name (ascending)" },
-        { value: "name-descending", text: "Name (descending)" }
+        { value: "name-descending", text: "Name (descending)" },
+        { value: "priority-ascending", text: "Priority (Lowest to Highest)" },
+        { value: "priority-descending", text: "Priority (Highest to Lowest)" }
     ]
 
     // Get currently selected option from current sorter.
