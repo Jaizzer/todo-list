@@ -33,6 +33,13 @@ export function createProjectCard(project) {
         todayIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><title>white-balance-sunny</title><path d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13" /></svg>`;
         projectCard.appendChild(todayIcon);
     }
+    // Add 'this-week' icon to this-week-project.
+    else if (project.projectId === "this-week-project") {
+        const thisWeekIcon = document.createElement("div");
+        thisWeekIcon.className = "icon-container"
+        thisWeekIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><title>calendar-week</title><path d="M6 1H8V3H16V1H18V3H19C20.11 3 21 3.9 21 5V19C21 20.11 20.11 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.89 3.89 3 5 3H6V1M5 8V19H19V8H5M7 10H17V12H7V10Z" /></svg>`;
+        projectCard.appendChild(thisWeekIcon);
+    }
 
     // Put project title inside the project card.
     const projectTitle = document.createElement("div");
@@ -41,7 +48,7 @@ export function createProjectCard(project) {
     projectCard.appendChild(projectTitle);
 
     // Only add feature buttons to "non-Home" projects.
-    if (project.projectId !== "home-project" && project.projectId !== "completed-project" && project.projectId !== "today-project") {
+    if (project.projectId !== "home-project" && project.projectId !== "completed-project" && project.projectId !== "today-project" && project.projectId !== "this-week-project") {
         addDeleteButton(projectCard);
         addEditButton(projectCard);
     }
