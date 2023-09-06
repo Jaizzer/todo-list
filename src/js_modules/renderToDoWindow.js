@@ -2,6 +2,7 @@ import { Project } from "./Project";
 import { createToDoCard } from "./createToDoCard";
 import { popUpToDoAdderForm } from "./popUpToDoAdderForm";
 import { sort } from "./sort";
+const compareWeek = require("compare-week");
 
 export function renderToDoWindow(currentProject) {
     // Access current to do window.
@@ -151,6 +152,23 @@ function createToDoTab(currentProject) {
                 // Format current date similar to the date structure of 'dueDate' property of ToDo object.
                 const formattedCurrentDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
                 if (toDoItem.dueDate === formattedCurrentDate) {
+                    unsortedToDoItems.push(toDoItem);
+                }
+            }));
+    }
+    // Render all This Week ToDos from different Projecrs if the currently selected project is "This Week"
+    else if (currentProject.projectId === "this-week-project" ) {
+        Project.projects.forEach(project => project.toDoItems
+            .forEach(toDoItem => {
+                // Get current date.
+                const currentDate = new Date();
+
+                // Get due date.
+                const [year, month, day] = toDoItem.dueDate.split("-");
+                const dueDate = new Date(year, month - 1, day);
+
+                // Check if due date of current to do is in current "this week".
+                if (compareWeek(currentDate, dueDate)) {
                     unsortedToDoItems.push(toDoItem);
                 }
             }));
