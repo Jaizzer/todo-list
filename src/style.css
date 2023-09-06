@@ -106,6 +106,7 @@ body {
 #home-project, 
 #completed-project,
 #today-project,
+#this-week-project,
 #created-projects-dropdown {
 
     display: grid;
@@ -120,6 +121,7 @@ body {
 #home-project .icon,
 #completed-project .icon,
 #today-project .icon,
+#this-week-project .icon,
 #created-projects-dropdown .icon {
     display: block;
 
