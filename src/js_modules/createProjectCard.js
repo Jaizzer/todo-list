@@ -12,21 +12,21 @@ export function createProjectCard(project) {
     // Add referece to the project object.
     projectCard.projectReference = project;
 
-    // Add home icon to home-project.
+    // Add 'home' icon to home-project.
     if (project.projectId === "home-project") {
         const homeIcon = document.createElement("div");
         homeIcon.className = "icon-container"
         homeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg>`;
         projectCard.appendChild(homeIcon);
     }
-    // Add home icon to home-project.
+    // Add 'completed' icon to completed-project.
     else if (project.projectId === "completed-project") {
         const completedIcon = document.createElement("div");
         completedIcon.className = "icon-container"
         completedIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24"><title>check-circle</title><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z" /></svg>`;
         projectCard.appendChild(completedIcon);
     }
-    // Add home icon to home-project.
+    // Add 'today' icon to today-project.
     else if (project.projectId === "today-project") {
         const todayIcon = document.createElement("div");
         todayIcon.className = "icon-container"
