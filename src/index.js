@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
 
         const projectCard = createProjectCard(project)
 
-        if (project.projectId === "home-project" || project.projectId === "completed-project" || project.projectId === "today-project") {
+        if (project.projectId === "home-project" || project.projectId === "completed-project" || project.projectId === "today-project" || project.projectId === "this-week-project") {
             defaultProjectsContainer.appendChild(projectCard);
         }
         else {
