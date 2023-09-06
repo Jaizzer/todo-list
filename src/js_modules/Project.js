@@ -47,6 +47,7 @@ export class Project {
             new Project("Home", null, "home-project");
             new Project("Completed", null, "completed-project");
             new Project("Today", null, "today-project");
+            new Project("This Week", null, "this-week-project");
         }
 
         // Put home project to static variable.
