@@ -1,3 +1,4 @@
+/* Global Styles */
 .icon {
     height: 10px;
     width: 10px;
@@ -21,24 +22,23 @@ body {
     font-family: "Roboto", sans-serif;
     width: 100vw;
     height: 100vh;
-
     padding: 20px;
     background-color: grey;
 }
 
-.content {  
+/* Content Container */
+.content {
     height: 100%;
     display: grid;
     grid-template-columns: 200px 1fr;
-
     border-radius: 20px;
     overflow: hidden;
 }
 
+/* Dashboard */
 .dashboard {
     background-color: black;
     padding: 20px;
-
     display: grid;
     align-content: start;
     gap: 10px;
@@ -56,25 +56,26 @@ body {
     gap: 10px;
 }
 
-
+/* Default Projects Container */
 .default-projects-container {
     display: grid;
     gap: 10px;
 }
 
+/* Created Projects Container */
 .created-projects-container.inactive {
     display: none;
 }
+
 .created-projects-container.active {
     display: grid;
     gap: 3px;
 }
 
+/* Project Card */
 .project-card {
     padding: 5px;
-
     border-radius: 6px;
-
     display: grid;
     grid-template-columns: 1fr 25px 25px;
     gap: 5px;
@@ -90,31 +91,25 @@ body {
     background-color: grey;
 }
 
-
-.created-projects-container.active > *{
-
+.created-projects-container.active > * {
     margin-left: 10px;
-
     padding: 4px;
-    
     border-radius: 6px;
-
     font-size: 14px;
     color: white;
 }
 
-#home-project, 
+/* Project and Dropdown Icons */
+#home-project,
 #completed-project,
 #today-project,
 #this-week-project,
 #created-projects-dropdown {
-
     display: grid;
     grid-auto-flow: column;
     align-content: center;
     justify-content: start;
     grid-template-columns: auto 1fr;
-
     color: white;
 }
 
@@ -124,11 +119,8 @@ body {
 #this-week-project .icon,
 #created-projects-dropdown .icon {
     display: block;
-
-
     width: 20px;
     height: 20px;
-
     fill: white;
 }
 
@@ -142,36 +134,32 @@ body {
     fill: white;
 }
 
+/* Project Adder */
 .project-adder {
     padding: 5px 0;
-   
     border: 0px;
-
     display: grid;
     grid-template-columns: 20px auto;
     grid-template-rows: 20px;
     gap: 10px;
-
     justify-content: start;
     align-items: center;
     justify-items: start;
-
     background-color: transparent;
-
     color: white;
 }
 
 .project-adder .icon,
 .to-do-adder .icon {
-   width: 20px;
-   height: 20px;
-   fill: white
+    width: 20px;
+    height: 20px;
+    fill: white;
 }
 
+/* To-Do Window */
 .to-do-window {
     background-color: rgb(187, 181, 181);
     padding: 20px;
-
     display: grid;
     align-content: start;
     gap: 10px;
@@ -182,52 +170,43 @@ body {
     font-weight: 600;
 }
 
+/* To-Do Tab */
 .to-do-tab {
     display: grid;
     gap: 10px;
 }
 
+/* To-Do Container */
 .to-do-container {
-
     height: 45px;
-
     padding: 10px;
-
     border-radius: 6px;
-
     display: grid;
     grid-template-columns: 25px 1fr 100px 25px 25px 25px;
     gap: 5px;
-
     align-content: center;
-
     background-color: white;
 }
 
-
+/* To-Do Adder */
 .to-do-adder {
     height: 45px;
     width: 100%;
-
     padding: 10px;
-
     border: 3px solid white;
     border-radius: 6px;
-
     font-size: 20px;
     font-weight: 700;
     color: white;
     text-align: justify;
-
     background-color: transparent;
-
     display: grid;
     grid-auto-flow: column;
     justify-content: start;
     gap: 10px;
 }
 
-/* CSS styling */
+/* To-Do Info Background */
 .to-do-info-background {
     position: fixed;
     top: 0;
@@ -241,6 +220,7 @@ body {
     backdrop-filter: blur(5px);
 }
 
+/* To-Do Info Container */
 .to-do-info-container {
     width: 300px;
     background-color: white;
@@ -252,7 +232,7 @@ body {
     overflow: auto;
     display: grid;
     grid-template-rows: 30px;
-    gap: 5px
+    gap: 5px;
 }
 
 .close .icon {
@@ -274,29 +254,25 @@ body {
     font-weight: 600;
 }
 
+/* Form Container */
 .form-container {
     width: 100%;
     height: 100%;
-
     position: fixed;
     top: 0;
     left: 0;
-
     background-color: rgba(101, 101, 101, 0.22);
     backdrop-filter: blur(1px);
-
     display: grid;
-
     align-items: center;
     justify-content: center;
 }
 
+/* Form Styles */
 form {
     background-color: white;
-
     border-radius: 10px;
     padding: 25px;
-
     display: grid;
     gap: 10px;
 }
@@ -307,9 +283,7 @@ textarea {
     width: 100%;
     display: block;
     border-radius: 5px;
-
     border: 2px solid rgb(215, 211, 211);
-
     padding: 5px 7px;
 }
 
@@ -324,10 +298,8 @@ input[type=submit],
 input[type=button] {
     width: 100%;
     height: 25px;
-
     border-radius: 5px;
     border: 0px;
-
     background-color: rgb(82, 77, 77);
     color: white;
 }
@@ -344,6 +316,7 @@ input[type=button]:hover {
     background-color: transparent;
 }
 
+/* Icon Visibility */
 .project-card .icon,
 .to-do-container .icon {
     display: none;
@@ -351,16 +324,10 @@ input[type=button]:hover {
     width: 16px;
 }
 
-.project-card:hover .icon {
-    display: block;
-    fill: white;
-}
-
+.project-card:hover .icon,
 .to-do-container:hover .icon {
     display: block;
-    fill: black;
 }
-
 
 .delete:hover .icon {
     display: block;
@@ -372,6 +339,7 @@ input[type=button]:hover {
     fill: green;
 }
 
+/* Completed To-Do Style */
 .to-do-container.completed {
     background-color: rgb(173, 238, 173);
 }
