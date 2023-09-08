@@ -26,7 +26,7 @@ export function popUpToDoAdderForm() {
     descriptionTextarea.name = "description";
     descriptionTextarea.rows = 4;
     descriptionTextarea.cols = 50;
-    descriptionTextarea.required = true;
+    descriptionTextarea.required = false;
     toDoAdderForm.appendChild(createFieldDiv("Description:", descriptionTextarea));
 
     // Create due date input.
