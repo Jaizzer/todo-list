@@ -1,5 +1,5 @@
-import {parse, stringify} from 'flatted';
-import { ToDo } from  "./ToDo.js";
+import { parse, stringify } from 'flatted';
+import { ToDo } from "./ToDo.js";
 const generateUniqueId = require("generate-unique-id");
 
 /**
@@ -24,23 +24,31 @@ export class Project {
         const serializedSavedProject = localStorage.getItem("Project.projects");
         if (serializedSavedProject) {
 
-            // Convert serialized saved projects back to original Project object structure.
-            Project.projects = parse(serializedSavedProject)
-                .map(project => {
-                    return new Project(
-                        project.projectTitle, 
-                        project.toDoItems.map(toDoItem => {
-                            // Reconstruct to-do items without "project" property since parent project is being currently instantiated in this point.
-                            const { project, ...nonProjectProperties } = toDoItem;
-                            return new ToDo(...Object.values(nonProjectProperties), null);
-                        }), 
-                        project.projectId)
-                });
-            
-            // Now assign the "project" property of ToDo objects to the parent projects since parent projects are now created at this point.
-            Project.projects.forEach(project => {
-                project.toDoItems.forEach(toDoItem => toDoItem.project = project);
+            // Parse the serialized save projects.
+            const parsedSerializedSavedProject = parse(serializedSavedProject);
+
+            // Create blank "Project" objects to be populated.
+            Project.projects = parsedSerializedSavedProject.map(project => {
+                return new Project(null, null, null);
             });
+
+            // Populate the blank projects with "project tile", "to-do items", and "project id" from local storage.
+            for (let i = 0; i < Project.projects.length; i++) {
+
+                // Add the projects' respective titles.
+                Project.projects[i].projectTitle = parsedSerializedSavedProject[i].projectTitle;
+
+                // Add the projects' respective to-do items.
+                parsedSerializedSavedProject[i].toDoItems.forEach(toDoItem => {
+                    Project.projects[i].addToDo(new ToDo(...Object.values(toDoItem)));
+                })
+
+                // Add the projects's respective ID.
+                Project.projects[i].projectId = parsedSerializedSavedProject[i].projectId;
+
+                // Save changes.
+                Project.#saveChanges();
+            }
         }
         // If there is no projects to be load, create default "Home" project and "Completed" project.
         else {
