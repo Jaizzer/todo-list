@@ -28,9 +28,9 @@ export class Project {
             const parsedSerializedSavedProject = parse(serializedSavedProject);
 
             // Create blank "Project" objects to be populated.
-            Project.projects = parsedSerializedSavedProject.map(project => {
-                return new Project(null, null, null);
-            });
+            for (let i = 0; i < parsedSerializedSavedProject.length; i++) {
+                new Project(null, null, null);
+            }
 
             // Populate the blank projects with "project tile", "to-do items", and "project id" from local storage.
             for (let i = 0; i < Project.projects.length; i++) {
