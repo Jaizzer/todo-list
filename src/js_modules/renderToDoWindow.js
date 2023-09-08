@@ -30,7 +30,7 @@ export function renderToDoWindow(currentProject) {
     newToDoWindow.appendChild(toDoTab);
     
     // Only add the to-do adder button to non "Complete" projects.
-    if (currentProject.id !== "completed-project" && currentProject.id !== "today-project") {
+    if (currentProject.id !== "completed-project" && currentProject.id !== "today-project" && currentProject.id !== "this-week-project") {
         newToDoWindow.appendChild(toDoAdderButton);
     }
 
