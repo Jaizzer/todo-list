@@ -6,9 +6,9 @@ const generateUniqueId = require("generate-unique-id");
  * Represents a project item.
  *
  * @class
- * @param {string} projectTitle - The title of the project. 
+ * @param {string} title - The title of the project. 
  * @param {Array} toDoItems - Array containing ToDo objects.
- * @param {string} projectId - ID for the proejct.
+ * @param {string} id - ID for the proejct.
  */
 export class Project {
 
@@ -36,7 +36,7 @@ export class Project {
             for (let i = 0; i < Project.projects.length; i++) {
 
                 // Add the projects' respective titles.
-                Project.projects[i].projectTitle = parsedSerializedSavedProject[i].projectTitle;
+                Project.projects[i].title = parsedSerializedSavedProject[i].title;
 
                 // Add the projects' respective to-do items.
                 parsedSerializedSavedProject[i].toDoItems.forEach(toDoItem => {
@@ -44,7 +44,7 @@ export class Project {
                 })
 
                 // Add the projects's respective ID.
-                Project.projects[i].projectId = parsedSerializedSavedProject[i].projectId;
+                Project.projects[i].id = parsedSerializedSavedProject[i].id;
 
                 // Save changes.
                 Project.#saveChanges();
@@ -59,14 +59,14 @@ export class Project {
         }
 
         // Put home project to static variable.
-        Project.home = Project.projects.find(project => project.projectId === "home-project");
+        Project.home = Project.projects.find(project => project.id === "home-project");
     }
 
     // Project Constructor.
-    constructor(projectTitle = null, toDoItems = null, projectId = null) {
+    constructor(title = null, toDoItems = null, id = null) {
 
         // Set the project title.
-        this.projectTitle = (projectTitle !== null) ? projectTitle : null;
+        this.title = (title !== null) ? title : null;
 
         // Set the "toDoItems" array.
         if (toDoItems !== null) {
@@ -78,12 +78,12 @@ export class Project {
         }
 
         // Set project's ID to given project ID during project instantiation.
-        if (projectId !== null) {
-            this.projectId = projectId;
+        if (id !== null) {
+            this.id = id;
         }
         // Add a generated 15-character ID to project if nothing was provided during Project's instantiation.
         else {
-            this.projectId = generateUniqueId({ length: 15, useNumbers: true, useLetters: true });
+            this.id = generateUniqueId({ length: 15, useNumbers: true, useLetters: true });
         }
 
         // Insert new Project object inside "projects" array.
@@ -102,8 +102,8 @@ export class Project {
     }
 
     // Edit project title.
-    setProjectTitle(newTitle) {
-        this.projectTitle = newTitle;
+    settitle(newTitle) {
+        this.title = newTitle;
 
         // Save serialized changes to local storage.
         Project.#saveChanges();

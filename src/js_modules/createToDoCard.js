@@ -119,7 +119,7 @@ function addCheckBox(toDoCard) {
             toDoCard.className = "to-do-container"
 
             // If a 'completed' to-do is set to 'unfinished' to do, remove it from the "Completed" project's to-do window.
-            if (getCurrentlySelectedProject().projectId === "completed-project") {
+            if (getCurrentlySelectedProject().id === "completed-project") {
                 toDoCard.parentElement.removeChild(toDoCard);
             }
         }

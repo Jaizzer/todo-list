@@ -30,7 +30,7 @@ export function renderToDoWindow(currentProject) {
     newToDoWindow.appendChild(toDoTab);
     
     // Only add the to-do adder button to non "Complete" projects.
-    if (currentProject.projectId !== "completed-project" && currentProject.projectId !== "today-project") {
+    if (currentProject.id !== "completed-project" && currentProject.id !== "today-project") {
         newToDoWindow.appendChild(toDoAdderButton);
     }
 
@@ -43,7 +43,7 @@ export function renderToDoWindow(currentProject) {
 function createCurrentProjectNameCard(currentProject) {
     const currentProjectNameCard = document.createElement("div");
     currentProjectNameCard.className = "parent-project-name"
-    currentProjectNameCard.textContent = currentProject.projectTitle;
+    currentProjectNameCard.textContent = currentProject.title;
 
     return currentProjectNameCard;
 }
@@ -134,7 +134,7 @@ function createToDoTab(currentProject) {
             }));
     }
     // Render all completed ToDos from different Projecrs if the currently selected project is "Completed"
-    else if (currentProject.projectId === "completed-project" ) {
+    else if (currentProject.id === "completed-project" ) {
         Project.projects.forEach(project => project.toDoItems
             .forEach(toDoItem => {
                 if (toDoItem.completed) {
@@ -143,7 +143,7 @@ function createToDoTab(currentProject) {
             }));
     }
     // Render all Today ToDos from different Projecrs if the currently selected project is "Today"
-    else if (currentProject.projectId === "today-project" ) {
+    else if (currentProject.id === "today-project" ) {
         Project.projects.forEach(project => project.toDoItems
             .forEach(toDoItem => {
                 // Get current date.
@@ -157,7 +157,7 @@ function createToDoTab(currentProject) {
             }));
     }
     // Render all This Week ToDos from different Projecrs if the currently selected project is "This Week"
-    else if (currentProject.projectId === "this-week-project" ) {
+    else if (currentProject.id === "this-week-project" ) {
         Project.projects.forEach(project => project.toDoItems
             .forEach(toDoItem => {
                 // Get current date.

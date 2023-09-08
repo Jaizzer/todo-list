@@ -13,7 +13,7 @@ export function popUpProjectEditorForm(projectCard) {
     const newProjectTitleInput = document.createElement("input");
     newProjectTitleInput.type = "text";
     newProjectTitleInput.id = "project-title";
-    newProjectTitleInput.value = projectCard.projectReference.projectTitle;
+    newProjectTitleInput.value = projectCard.projectReference.title;
     projectEditorForm.appendChild(newProjectTitleInput);
 
     // Create submit button.

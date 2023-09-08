@@ -40,7 +40,7 @@ export function popUpToDoInfoCard(toDoCard) {
     // Create info-field divs for each field
     toDoInfoContainer.appendChild(createInfoField("Title", toDoCard.toDoReference.title));
     toDoInfoContainer.appendChild(createInfoField("Due Date", formatDate(toDoCard.toDoReference.dueDate)));
-    toDoInfoContainer.appendChild(createInfoField("Project", toDoCard.toDoReference.project.projectTitle));
+    toDoInfoContainer.appendChild(createInfoField("Project", toDoCard.toDoReference.project.title));
     toDoInfoContainer.appendChild(createInfoField("Description", toDoCard.toDoReference.description));
     toDoInfoContainer.appendChild(createInfoField("Priority", toDoCard.toDoReference.priority));
     toDoInfoContainer.appendChild(createInfoField("Notes", toDoCard.toDoReference.notes));
