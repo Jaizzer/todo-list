@@ -29,7 +29,7 @@ export function createToDoCard(ToDo) {
     // Create to-do due date container.
     const toDoDueDate = document.createElement("div");
     toDoDueDate.className = "to-do-due-date";
-    toDoDueDate.textContent = formatDate(ToDo.dueDate);
+    toDoDueDate.textContent = `Due: ${formatDate(ToDo.dueDate)}`;
     toDoCard.appendChild(toDoDueDate);
 
 

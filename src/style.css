@@ -182,7 +182,7 @@ body {
     padding: 10px;
     border-radius: 6px;
     display: grid;
-    grid-template-columns: 25px 1fr 100px 25px 25px 25px;
+    grid-template-columns: 25px 1fr 150px 25px 25px 25px;
     gap: 5px;
     align-content: center;
     background-color: white;
