@@ -345,3 +345,30 @@ input[type=button]:hover {
 .to-do-container.completed {
     background-color: rgb(173, 238, 173);
 }
+
+
+@media (max-width: 850px) {
+
+    #home-project,
+    #completed-project,
+    #today-project,
+    #this-week-project,
+    #created-projects-dropdown {
+        white-space: nowrap;
+    }
+
+    /* Adjust the dashboard and to-do window to stack on top of each other */
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .default-projects-container {
+        padding: 10px 0;
+        grid-auto-flow: column;
+
+        gap: 10px;
+        width: 100%;
+        overflow: auto;
+    }
+}
