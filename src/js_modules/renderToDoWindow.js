@@ -1,7 +1,7 @@
 import { Project } from "./Project";
 import { createToDoCard } from "./createToDoCard";
 import { popUpToDoAdderForm } from "./popUpToDoAdderForm";
-import { sort } from "./sort";
+import { sortToDoItems } from "./sortToDoItems";
 const compareWeek = require("compare-week");
 
 export function renderToDoWindow(currentProject) {
@@ -181,7 +181,7 @@ function createToDoTab(currentProject) {
     }
 
     // Sort.
-    const sortedToDoItems = sort(unsortedToDoItems);
+    const sortedToDoItems = sortToDoItems(unsortedToDoItems);
 
     // Render all ToDo cards to ToDo tab.
     sortedToDoItems.forEach(toDoItem => {

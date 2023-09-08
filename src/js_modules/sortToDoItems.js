@@ -4,7 +4,7 @@
  * @param {Array} unsortedToDoItems - An array of to-do items to be sorted.
  * @returns {Array}  An array of sorted to-do items.
  */
-export function sort(unsortedToDoItems) {
+export function sortToDoItems(unsortedToDoItems) {
     // Get the current sorter or set the default sort criteria.
     const sortCriteria = document.querySelector("#sorter")?.value || "time-created-ascending";
 
