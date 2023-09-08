@@ -5,118 +5,37 @@
  * @returns {Array}  An array of sorted to-do items.
  */
 export function sort(unsortedToDoItems) {
-    // Array to hold sorted items.
-    let sortedToDoItems;
+    // Get the current sorter or set the default sort criteria.
+    const sortCriteria = document.querySelector("#sorter")?.value || "time-created-ascending";
 
-    // Get the current sorter.
-    const currentSorter = document.querySelector("#sorter");
+    // Create a mapping of sort criteria to comparison functions.
+    const sortFunctions = {
+        "date-ascending": (ToDo1, ToDo2) => new Date(ToDo1.dueDate) - new Date(ToDo2.dueDate),
+        "date-descending": (ToDo1, ToDo2) => new Date(ToDo2.dueDate) - new Date(ToDo1.dueDate),
+        "name-ascending": (ToDo1, ToDo2) => ToDo1.title.localeCompare(ToDo2.title),
+        "name-descending": (ToDo1, ToDo2) => ToDo2.title.localeCompare(ToDo1.title),
+        "time-created-ascending": (ToDo1, ToDo2) => new Date(ToDo1.dateAndTimeCreated) - new Date(ToDo2.dateAndTimeCreated),
+        "time-created-descending": (ToDo1, ToDo2) => new Date(ToDo2.dateAndTimeCreated) - new Date(ToDo1.dateAndTimeCreated),
+        "priority-ascending": (ToDo1, ToDo2) => priorityLevel(ToDo1) - priorityLevel(ToDo2),
+        "priority-descending": (ToDo1, ToDo2) => priorityLevel(ToDo2) - priorityLevel(ToDo1),
+    };
 
-    // If there is no current sorter set the sort criteria to 'date-created-descending' by default.
-    const sortCriteria = (currentSorter === null) ? "time-created-ascending" : currentSorter.value;
+    // Define a function to get the priority level.
+    const priorityLevel = (ToDo) => {
+        switch (ToDo.priority) {
+            case "High":
+                return 3;
+            case "Medium":
+                return 2;
+            case "Low":
+                return 1;
+            default:
+                return 0; // Handle unexpected priority values.
+        }
+    };
 
-    // Sort by due date in ascending order.
-    if (sortCriteria === "date-ascending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-            const ToDo1Date = new Date(ToDo1.dueDate);
-            const ToDo2Date = new Date(ToDo2.dueDate);
-            return ToDo1Date - ToDo2Date;
-        });
-    }
-    // Sort by due date in descending order.
-    else if (sortCriteria === "date-descending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-            const ToDo1Date = new Date(ToDo1.dueDate);
-            const ToDo2Date = new Date(ToDo2.dueDate);
-            return ToDo2Date - ToDo1Date;
-        });
-    }
-    // Sort by name in ascending order.
-    else if (sortCriteria === "name-ascending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-            return ToDo1.title.localeCompare(ToDo2.title);
-        });
-    }
-    // Sort by name in descending order.
-    else if (sortCriteria === "name-descending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-            return ToDo2.title.localeCompare(ToDo1.title);
-        });
-    }
-    // Sort by time of creation (oldest to newest).
-    else if (sortCriteria === "time-created-ascending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-            const ToDo1Date = new Date(ToDo1.dateAndTimeCreated);
-            const ToDo2Date = new Date(ToDo2.dateAndTimeCreated);
-            return ToDo1Date - ToDo2Date;
-        });
-    }
-    // Sort by time of creation (newest to oldest).
-    else if (sortCriteria === "time-created-descending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-            const ToDo1Date = new Date(ToDo1.dateAndTimeCreated);
-            const ToDo2Date = new Date(ToDo2.dateAndTimeCreated);
-            return ToDo2Date - ToDo1Date;
-        });
-    }
-    // Sort by priority level (ascending) 
-    else if (sortCriteria === "priority-ascending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
+    // Sort the array using the selected criteria.
+    const sortedToDoItems = unsortedToDoItems.sort(sortFunctions[sortCriteria] || (() => 0));
 
-            let toDo1PriorityLevel;
-            switch (ToDo1.priority) {
-                case "High":
-                    toDo1PriorityLevel = 3;
-                    break;
-                case "Medium":
-                    toDo1PriorityLevel = 2;
-                case "Low":
-                    toDo1PriorityLevel = 1;
-            }
-
-            let toDo2PriorityLevel;
-            switch (ToDo2.priority) {
-                case "High":
-                    toDo2PriorityLevel = 3;
-                    break;
-                case "Medium":
-                    toDo2PriorityLevel = 2;
-                case "Low":
-                    toDo2PriorityLevel = 1;
-            }
-
-            return toDo1PriorityLevel - toDo2PriorityLevel;
-        })
-    }
-    // Sort by priority level (descending) 
-    else if (sortCriteria === "priority-descending") {
-        sortedToDoItems = unsortedToDoItems.sort((ToDo1, ToDo2) => {
-
-            let toDo1PriorityLevel;
-            switch (ToDo1.priority) {
-                case "High":
-                    toDo1PriorityLevel = 3;
-                    break;
-                case "Medium":
-                    toDo1PriorityLevel = 2;
-                case "Low":
-                    toDo1PriorityLevel = 1;
-            }
-
-            let toDo2PriorityLevel;
-            switch (ToDo2.priority) {
-                case "High":
-                    toDo2PriorityLevel = 3;
-                    break;
-                case "Medium":
-                    toDo2PriorityLevel = 2;
-                case "Low":
-                    toDo2PriorityLevel = 1;
-            }
-
-            return toDo2PriorityLevel - toDo1PriorityLevel;
-        })
-    }
-
-    // Return the array of sorted to-do items.
     return sortedToDoItems;
 }
