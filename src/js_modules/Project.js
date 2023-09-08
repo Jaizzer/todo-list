@@ -102,7 +102,7 @@ export class Project {
     }
 
     // Edit project title.
-    settitle(newTitle) {
+    setProjectTitle(newTitle) {
         this.title = newTitle;
 
         // Save serialized changes to local storage.
