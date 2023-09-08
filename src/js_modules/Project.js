@@ -63,10 +63,10 @@ export class Project {
     }
 
     // Project Constructor.
-    constructor(projectTitle, toDoItems = null, projectId = null) {
+    constructor(projectTitle = null, toDoItems = null, projectId = null) {
 
         // Set the project title.
-        this.projectTitle = projectTitle;
+        this.projectTitle = (projectTitle !== null) ? projectTitle : null;
 
         // Set the "toDoItems" array.
         if (toDoItems !== null) {
