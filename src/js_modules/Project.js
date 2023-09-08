@@ -93,8 +93,8 @@ export class Project {
         Project.#saveChanges();
     }
 
-     // Delete project from the "Project.projects" array.
-     delete() {
+    // Delete project from the "Project.projects" array.
+    delete() {
         Project.projects.splice(Project.projects.indexOf(this), 1);
 
         // Save serialized changes to local storage.
@@ -138,7 +138,7 @@ export class Project {
 
         // Replace ToDo item with the new ToDo item.
         this.toDoItems[this.toDoItems.indexOf(oldToDo)] = newToDo;
-        
+
         // Save serialized changes to local storage.
         Project.#saveChanges();
     }
