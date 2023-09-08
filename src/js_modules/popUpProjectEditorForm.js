@@ -36,12 +36,15 @@ export function popUpProjectEditorForm(projectCard) {
 
         event.preventDefault();
 
-        // Modify project title in back-end.
-        projectCard.projectReference.setProjectTitle(newProjectTitleInput.value);
+        // Ask for user confirmation before editing.
+        if (window.confirm("Confirm changes?")){
+            // Modify project title in back-end.
+            projectCard.projectReference.setProjectTitle(newProjectTitleInput.value);
 
-        // Modify project title in front-end.
-        projectCard.querySelector(".project-name").textContent = newProjectTitleInput.value;
-        document.querySelector(".parent-project-name").textContent = newProjectTitleInput.value;
+            // Modify project title in front-end.
+            projectCard.querySelector(".project-name").textContent = newProjectTitleInput.value;
+            document.querySelector(".parent-project-name").textContent = newProjectTitleInput.value;
+        }
 
         // Remove form from the DOM when submitted.
         formContainer.parentElement.removeChild(formContainer);

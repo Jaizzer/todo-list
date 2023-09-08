@@ -85,30 +85,35 @@ export function popUpToDoEditorForm(toDoCard) {
         // Prevent form submission.
         event.preventDefault()
 
-        // Parse form control values.
-        const toDoTitle = document.querySelector("#title").value;
-        const toDoDescription = document.querySelector("#description").value;
-        const toDoDueDate = document.querySelector("#due-date").value;
-        const toDoPriority = document.querySelector("#priority").value;
-        const toDoNotes = document.querySelector("#notes").value;
-
-        // Update current to do.
-        toDoCard.toDoReference.title = toDoTitle;
-        toDoCard.toDoReference.description = toDoDescription;
-        toDoCard.toDoReference.dueDate = toDoDueDate;
-        toDoCard.toDoReference.priority = toDoPriority;
-        toDoCard.toDoReference.notes = toDoNotes;
-        toDoCard.toDoReference.dateAndTimeCreated = toDoCard.toDoReference.dateAndTimeCreated;
-        toDoCard.toDoReference.dateModified = new Date().toLocaleString();
+        // Show confirmation before editing.
+        if (window.confirm("Confirm changes?")) {
+            // The user clicked "OK"
+            
+            // Parse form control values.
+            const toDoTitle = document.querySelector("#title").value;
+            const toDoDescription = document.querySelector("#description").value;
+            const toDoDueDate = document.querySelector("#due-date").value;
+            const toDoPriority = document.querySelector("#priority").value;
+            const toDoNotes = document.querySelector("#notes").value;
         
-        // Replace the current ToDo item with the ToDo item with all changes applied in parent project's "toDoItems" array.
-        toDoCard.toDoReference.project.replaceToDo(toDoCard.toDoReference, toDoCard.toDoReference);
-
-        // Update to-do tab.
-        renderToDoWindow(getCurrentlySelectedProject());
-
-        // Remove the form from the DOM once submitted.
-        formContainer.parentElement.removeChild(formContainer);
+            // Update current to do.
+            toDoCard.toDoReference.title = toDoTitle;
+            toDoCard.toDoReference.description = toDoDescription;
+            toDoCard.toDoReference.dueDate = toDoDueDate;
+            toDoCard.toDoReference.priority = toDoPriority;
+            toDoCard.toDoReference.notes = toDoNotes;
+            toDoCard.toDoReference.dateAndTimeCreated = toDoCard.toDoReference.dateAndTimeCreated;
+            toDoCard.toDoReference.dateModified = new Date().toLocaleString();
+        
+            // Replace the current ToDo item with the ToDo item with all changes applied in the parent project's "toDoItems" array.
+            toDoCard.toDoReference.project.replaceToDo(toDoCard.toDoReference, toDoCard.toDoReference);
+        
+            // Update the to-do tab.
+            renderToDoWindow(getCurrentlySelectedProject());
+        
+            // Remove the form from the DOM once submitted.
+            formContainer.parentElement.removeChild(formContainer);
+        }
     });
 
     document.body.appendChild(formContainer);

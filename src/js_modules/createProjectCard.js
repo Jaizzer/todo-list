@@ -80,18 +80,20 @@ function addDeleteButton(projectCard) {
 
         event.stopPropagation();
 
-        // Delete Project (back-end)
-        projectCard.projectReference.delete();
+        // Ask the user for delete confirmation.
+        if (window.confirm("Confirm deletion?")) {
+            // Delete Project (back-end)
+            projectCard.projectReference.delete();
 
-        // Clear "To-Do" tabs.
-        document.querySelector(".to-do-tab").innerHTML = "";
+            // Clear "To-Do" tabs.
+            document.querySelector(".to-do-tab").innerHTML = "";
 
-        // Make "Home" project the currently selected project when current project is deleted.
-        setCurrentlySelectedProject(Project.home);
+            // Make "Home" project the currently selected project when current project is deleted.
+            setCurrentlySelectedProject(Project.home);
 
-        // Delete Project (front-end)
-        projectCard.parentNode.removeChild(projectCard);
-
+            // Delete Project (front-end)
+            projectCard.parentNode.removeChild(projectCard);
+        }
     })
 
     projectCard.appendChild(deleteButton);

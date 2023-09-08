@@ -57,11 +57,14 @@ function addDeleteButton(toDoCard) {
     // Add delete functionality to delete button.
     deleteButton.addEventListener("click", () => {
 
-        // Delete Project (back-end)
-        toDoCard.toDoReference.delete();
+        // Ask the user for delete confirmation.
+        if (window.confirm("Confirm deletion?")){
+            // Delete Project (back-end)
+            toDoCard.toDoReference.delete();
 
-        // Delete Project (front-end)
-        toDoCard.parentNode.removeChild(toDoCard);
+            // Delete Project (front-end)
+            toDoCard.parentNode.removeChild(toDoCard);
+        }
 
     })
 
