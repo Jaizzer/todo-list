@@ -215,10 +215,28 @@ label[for="sorter"] {
     padding: 10px;
     border-radius: 6px;
     display: grid;
-    grid-template-columns: 25px 1fr 150px 25px 25px 25px;
+    grid-template-columns: 25px 1fr 130px 25px 25px 25px;
     gap: 5px;
     align-content: center;
     background-color: white;
+}
+
+.to-do-due-date.upcoming {
+    padding: 3px;
+    border: 2px solid #6dcb68;
+    font-size: 14px;
+    color: #6dcb68;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.to-do-due-date.late {
+    padding: 3px;
+    border: 2px solid #d0645d;
+    font-size: 14px;
+    color: #d0645d;
+    border-radius: 5px;
+    text-transform: uppercase;
 }
 
 /* To-Do Adder */
