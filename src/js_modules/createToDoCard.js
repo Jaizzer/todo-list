@@ -28,7 +28,17 @@ export function createToDoCard(ToDo) {
 
     // Create to-do due date container.
     const toDoDueDate = document.createElement("div");
-    toDoDueDate.className = "to-do-due-date";
+
+    // Classify whether ToDo due date is already late or just upcoming.
+    if (isToDoLate(ToDo.dueDate)) {
+        toDoDueDate.className = "to-do-due-date late";
+        console.log("late", ToDo.dueDate);
+    }
+    else {
+        toDoDueDate.className = "to-do-due-date upcoming";
+        console.log("not-late", ToDo.dueDate);
+    }
+
     toDoDueDate.textContent = `Due: ${formatDate(ToDo.dueDate)}`;
     toDoCard.appendChild(toDoDueDate);
 
@@ -38,6 +48,23 @@ export function createToDoCard(ToDo) {
     addEditButton(toDoCard);
 
     return toDoCard;
+}
+
+
+// Check whether ToDo late is late or not.
+function isToDoLate(dueDate) {
+
+    // Get current date in "YYYY-MM-DD" format.
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    // Current date is ahead of due date hence ToDo is late.
+    if (currentDate > dueDate) {
+        return true;
+    }
+    // Current date is behind due date hence ToDo is not late.
+    else {
+        return false;
+    }
 }
 
 
