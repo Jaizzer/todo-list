@@ -229,24 +229,22 @@ label[for="sorter"] {
 
 .to-do-due-date {
     width: 125px;
+    padding: 3px;
+    border: 2px solid;
+    border-radius: 5px;
+
+    font-size: 13px;
+    text-transform: uppercase;
 }
 
 .to-do-due-date.upcoming {
-    padding: 3px;
-    border: 2px solid #6dcb68;
-    font-size: 14px;
+    border-color: #6dcb68;
     color: #6dcb68;
-    border-radius: 5px;
-    text-transform: uppercase;
 }
 
 .to-do-due-date.late {
-    padding: 3px;
-    border: 2px solid #d0645d;
-    font-size: 14px;
+    border-color: #d0645d;
     color: #d0645d;
-    border-radius: 5px;
-    text-transform: uppercase;
 }
 
 /* To-Do Adder */
