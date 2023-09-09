@@ -143,6 +143,8 @@ body {
 .created-projects-container.active .project-name,
 .to-do-title,
 .parent-project-name {
+    display: grid;
+    align-content: center;
     overflow: auto;
 }
 
