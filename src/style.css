@@ -172,6 +172,20 @@ body {
     font-weight: 600;
 }
 
+#sorter {
+    width: 200px;
+    height: 25px;
+
+    border: 2px solid grey;
+    border-radius: 6px;
+}
+
+#sorter:focus {
+    outline: none ;
+    border: 2px solid black;
+}
+
+
 /* To-Do Tab */
 .to-do-tab {
     display: grid;
