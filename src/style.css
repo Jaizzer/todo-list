@@ -172,6 +172,12 @@ body {
     font-weight: 600;
 }
 
+.sort-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3px;
+}
+
 label[for="sorter"] {
     font-size: 14px;
 }
