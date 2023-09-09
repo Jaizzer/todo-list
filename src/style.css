@@ -221,10 +221,14 @@ label[for="sorter"] {
     padding: 10px;
     border-radius: 6px;
     display: grid;
-    grid-template-columns: 25px 1fr 130px 25px 25px 25px;
+    grid-template-columns: 25px 1fr auto 25px 25px 25px;
     gap: 5px;
     align-content: center;
     background-color: white;
+}
+
+.to-do-due-date {
+    width: 125px;
 }
 
 .to-do-due-date.upcoming {
