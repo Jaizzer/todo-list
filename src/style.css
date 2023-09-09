@@ -172,6 +172,10 @@ body {
     font-weight: 600;
 }
 
+label[for="sorter"] {
+    font-size: 14px;
+}
+
 #sorter {
     display: block;
     width: 200px;
