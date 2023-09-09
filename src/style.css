@@ -281,17 +281,18 @@ label[for="sorter"] {
 
 /* To-Do Info Container */
 .to-do-info-container {
-    width: 300px;
+    width: 500px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     max-width: 80%;
     max-height: 80%;
-    overflow: auto;
     display: grid;
-    grid-template-rows: 30px;
-    gap: 5px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    overflow-y: auto;
 }
 
 .close .icon {
@@ -305,12 +306,22 @@ label[for="sorter"] {
 
 .info-field {
     display: grid;
-    justify-content: space-between;
-    grid-template-columns: 100px 100px;
+    width: 100% ;
+    grid-template-columns: 1fr;
 }
 
 .to-do-info-label {
+    width: 100%;
     font-weight: 600;
+}
+
+.to-do-info-value {
+    border: 2px solid grey;
+    border-radius: 6px;
+    padding: 5px;
+    overflow: auto;
+    word-wrap: break-word;
+    width: 100%;
 }
 
 /* Form Container */
