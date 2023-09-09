@@ -346,14 +346,17 @@ input[type=button]:hover {
 /* Icon Visibility */
 .project-card .icon,
 .to-do-container .icon {
-    display: none;
+    display: block;
     height: 16px;
     width: 16px;
 }
 
-.project-card:hover .icon,
-.to-do-container:hover .icon {
-    display: block;
+.project-card .icon {
+    fill: white;
+}
+
+.to-do-container .icon {
+    fill: black;
 }
 
 .delete:hover .icon {
