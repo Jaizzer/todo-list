@@ -53,7 +53,11 @@ export function createToDoCard(ToDo) {
 function isToDoLate(dueDate) {
 
     // Get current date in "YYYY-MM-DD" format.
-    const currentDate = new Date().toISOString().split('T')[0];
+    let currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); 
+    const day = String(currentDate.getDate()).padStart(2, '0'); 
+    currentDate = `${year}-${month}-${day}`;
 
     // Current date is ahead of due date hence ToDo is late.
     if (currentDate > dueDate) {
