@@ -133,7 +133,7 @@ body {
 }
 
 #created-projects-dropdown {
-    background-color: grey;
+    border: 2px solid grey;
 }
 
 #created-projects-dropdown .icon.dropdown {
