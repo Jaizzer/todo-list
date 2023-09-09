@@ -37,13 +37,18 @@ export function popUpToDoInfoCard(toDoCard) {
         return infoField;
     }
 
+    // Create info field container.
+    const infoFieldContainer = document.createElement("dic");
+    infoFieldContainer.className = "info-field-container";
+    toDoInfoContainer.appendChild(infoFieldContainer);
+
     // Create info-field divs for each field
-    toDoInfoContainer.appendChild(createInfoField("Title", toDoCard.toDoReference.title));
-    toDoInfoContainer.appendChild(createInfoField("Due Date", formatDate(toDoCard.toDoReference.dueDate)));
-    toDoInfoContainer.appendChild(createInfoField("Project", toDoCard.toDoReference.project.title));
-    toDoInfoContainer.appendChild(createInfoField("Description", toDoCard.toDoReference.description));
-    toDoInfoContainer.appendChild(createInfoField("Priority", toDoCard.toDoReference.priority));
-    toDoInfoContainer.appendChild(createInfoField("Notes", toDoCard.toDoReference.notes));
+    infoFieldContainer.appendChild(createInfoField("Title", toDoCard.toDoReference.title));
+    infoFieldContainer.appendChild(createInfoField("Due Date", formatDate(toDoCard.toDoReference.dueDate)));
+    infoFieldContainer.appendChild(createInfoField("Project", toDoCard.toDoReference.project.title));
+    infoFieldContainer.appendChild(createInfoField("Description", toDoCard.toDoReference.description));
+    infoFieldContainer.appendChild(createInfoField("Priority", toDoCard.toDoReference.priority));
+    infoFieldContainer.appendChild(createInfoField("Notes", toDoCard.toDoReference.notes));
 
     // Append the main container to the background container
     backgroundContainer.appendChild(toDoInfoContainer);
