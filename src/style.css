@@ -136,6 +136,12 @@ body {
     fill: white;
 }
 
+.created-projects-container.active .project-name,
+.to-do-title,
+.parent-project-name {
+    overflow: auto;
+}
+
 /* Project Adder */
 .project-adder {
     padding: 5px 0;
