@@ -132,7 +132,11 @@ body {
     width: 17px;
 }
 
-#created-projects-dropdown:hover .icon.dropdown {
+#created-projects-dropdown {
+    background-color: grey;
+}
+
+#created-projects-dropdown .icon.dropdown {
     fill: white;
 }
 
