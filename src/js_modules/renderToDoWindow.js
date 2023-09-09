@@ -63,6 +63,7 @@ function createSorter(currentProject) {
     const label = document.createElement("label");
     label.setAttribute("for", sorter.id);
     label.textContent = "Sort by:";
+    sorter.before(label);
 
     // Create the data values of options to be selected.
     const sortingOptions = [
@@ -114,7 +115,7 @@ function createSorter(currentProject) {
         currentToDoTab.parentElement.replaceChild(createToDoTab(currentProject), currentToDoTab);
     })
 
-    return sorter;
+    return sorterContainer;
 }
 
 function createToDoTab(currentProject) {
