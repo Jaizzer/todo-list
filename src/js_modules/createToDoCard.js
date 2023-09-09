@@ -32,11 +32,9 @@ export function createToDoCard(ToDo) {
     // Classify whether ToDo due date is already late or just upcoming.
     if (isToDoLate(ToDo.dueDate)) {
         toDoDueDate.className = "to-do-due-date late";
-        console.log("late", ToDo.dueDate);
     }
     else {
         toDoDueDate.className = "to-do-due-date upcoming";
-        console.log("not-late", ToDo.dueDate);
     }
 
     toDoDueDate.textContent = `Due: ${formatDate(ToDo.dueDate)}`;
