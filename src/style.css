@@ -433,4 +433,18 @@ input[type=button]:hover {
         width: 100%;
         overflow: auto;
     }
+
+    .to-do-title {
+        font-size: 13px;
+    }
+
+    .to-do-due-date.late, 
+    .to-do-due-date.upcoming {
+        font-size: 11px;
+    }
+
+    .to-do-due-date.late,
+    .to-do-due-date.upcoming {
+        width: 100px;
+    }
 }
