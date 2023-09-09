@@ -279,9 +279,9 @@ form {
     gap: 10px;
 }
 
-input,
-select,
-textarea {
+form input,
+form select,
+form textarea {
     width: 100%;
     display: block;
     border-radius: 5px;
@@ -289,9 +289,9 @@ textarea {
     padding: 5px 7px;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+form input:focus,
+form select:focus,
+form textarea:focus {
     outline: none;
     border: 2px solid black;
 }
