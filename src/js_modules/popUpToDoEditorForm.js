@@ -26,7 +26,7 @@ export function popUpToDoEditorForm(toDoCard) {
     descriptionTextarea.name = "description";
     descriptionTextarea.rows = 4;
     descriptionTextarea.cols = 50;
-    descriptionTextarea.required = true;
+    descriptionTextarea.required = false;
     descriptionTextarea.value = toDoCard.toDoReference.description;
     toDoEditorForm.appendChild(createFieldDiv("Description:", descriptionTextarea));
 
