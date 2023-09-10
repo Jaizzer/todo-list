@@ -436,7 +436,7 @@ input[type=button]:hover {
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 650px) {
 
     #home-project,
     #completed-project,
@@ -461,13 +461,17 @@ input[type=button]:hover {
         overflow: auto;
     }
 
+    .to-do-container {
+        gap: 2px;
+    }
+
     .to-do-title {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .to-do-due-date.late, 
     .to-do-due-date.upcoming {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .to-do-due-date.late,
