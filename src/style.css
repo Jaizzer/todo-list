@@ -175,16 +175,20 @@ body {
     background-color: rgb(187, 181, 181);
     padding: 20px;
     display: grid;
+    grid-template-columns: 1fr 1fr;
     align-content: start;
     gap: 10px;
 }
 
 .parent-project-name {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
     font-size: 20px;
     font-weight: 600;
 }
 
 .sort-container {
+    grid-column: 1 / 2;
     display: grid;
     grid-template-columns: 1fr;
     gap: 3px;
@@ -211,6 +215,7 @@ label[for="sorter"] {
 
 /* To-Do Tab */
 .to-do-tab {
+    grid-column: 1 / 3;
     display: grid;
     gap: 10px;
 }
@@ -249,6 +254,9 @@ label[for="sorter"] {
 
 /* To-Do Adder */
 .to-do-adder {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
     height: 45px;
     width: 100%;
     padding: 10px;
