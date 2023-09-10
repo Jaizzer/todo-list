@@ -265,6 +265,17 @@ label[for="sorter"] {
     gap: 10px;
 }
 
+.to-do-adder:hover,
+.to-do-adder:active {
+    background-color: white;
+}
+
+.to-do-adder:hover *,
+.to-do-adder:active * {
+    fill: #6dcb68;
+    color: #6dcb68;
+}
+
 /* To-Do Info Background */
 .to-do-info-background {
     position: fixed;
