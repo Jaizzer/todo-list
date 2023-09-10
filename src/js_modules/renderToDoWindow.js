@@ -198,16 +198,7 @@ function createToDoAdderButton() {
     // Create a button element
     const button = document.createElement("button");
     button.className = "to-do-adder";
-
-    // Create an SVG element using innerHTML
-    const svgHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
-            <title>Add ToDo</title>
-            <path d="M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-        </svg>`;
-
-    // Set the innerHTML of the button to include the SVG and caption
-    button.innerHTML = svgHTML + '<div class="button-caption">New ToDo...</div>';
+    button.textContent = "New ToDo";
 
     // Add feature that pops the to do adder form when button is clicked.
     button.addEventListener("click", function () {
