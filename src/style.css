@@ -256,32 +256,30 @@ label[for="sorter"] {
 .to-do-adder {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    align-self: end;
+    justify-self: end;
 
-    height: 45px;
-    width: 100%;
+    height: 30px;
+    width: 120px;
     padding: 10px;
-    border: 3px solid white;
+    border: 0px;
     border-radius: 6px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
-    color: white;
+    color: black;
     text-align: justify;
-    background-color: transparent;
+    background-color: white;
+
     display: grid;
-    grid-auto-flow: column;
-    justify-content: start;
-    gap: 10px;
+    align-content: center;
+
+    text-align: center;
 }
 
 .to-do-adder:hover,
 .to-do-adder:active {
-    background-color: white;
-}
-
-.to-do-adder:hover *,
-.to-do-adder:active * {
-    fill: #6dcb68;
-    color: #6dcb68;
+    background-color: black;
+    color: white;
 }
 
 /* To-Do Info Background */
