@@ -287,7 +287,12 @@ label[for="sorter"] {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     max-width: 80%;
-    max-height: 80%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.info-field-container {
+    height: 550px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -295,9 +300,17 @@ label[for="sorter"] {
     overflow-y: auto;
 }
 
+.close {
+    display: grid;
+    justify-content: start;
+
+    height: auto;
+    width: auto;
+}
+
 .close .icon {
-    height: 20px;
     width: 20px;
+    height: 20px;
 }
 
 .close .icon:hover {
