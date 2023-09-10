@@ -292,6 +292,10 @@ label[for="sorter"] {
 }
 
 .info-field-container {
+    padding-top: 5px; 
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 30px;
     height: 550px;
     display: grid;
     grid-template-columns: 1fr;
@@ -301,6 +305,7 @@ label[for="sorter"] {
 }
 
 .close {
+    padding-bottom: 10px;
     display: grid;
     justify-content: start;
 
