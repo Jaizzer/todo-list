@@ -496,7 +496,8 @@ input[type=button]:hover {
     #completed-project .icon,
     #today-project .icon,
     #this-week-project .icon,
-    #created-projects-dropdown .icon {
+    #created-projects-dropdown .icon,
+    .project-adder .icon {
         width: 15px;
         height: 15px;
     }
