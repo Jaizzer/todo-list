@@ -201,6 +201,8 @@ label[for="sorter"] {
 }
 
 #sorter {
+    color: black;
+    background-color: white;
     display: block;
     width: 200px;
     height: 25px;
