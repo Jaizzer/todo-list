@@ -492,6 +492,10 @@ input[type=button]:hover {
         font-size: 13px;
     }
 
+    .projects-tab {
+        gap: 3px;
+    }
+
     #home-project .icon,
     #completed-project .icon,
     #today-project .icon,
