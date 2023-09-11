@@ -430,6 +430,10 @@ form {
     gap: 10px;
 }
 
+textarea {
+    resize: none;
+}
+
 form input,
 form select,
 form textarea {
