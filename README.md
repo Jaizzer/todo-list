@@ -63,7 +63,7 @@ Click **Home** and you will see **New ToDo** in the to-do window.
 
 9. ToDo's you created will have a green-colored due date indicator if its not yet past its deadline. Otherwise, it will be red.
 
-    ![Due Date Indicator](Demo/due-due-date-indicator.png)
+    ![Due Date Indicator](Demo/due-date-indicator.png)
 
 10. Tick the checkbox when you've completed the ToDo. This ToDo can now appear in the **Completed** tab.
 
