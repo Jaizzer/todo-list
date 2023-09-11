@@ -62,9 +62,14 @@ function setUpProjectDropdown() {
     const projectDropdownButton = document.querySelector("#created-projects-dropdown");
     projectDropdownButton.addEventListener("click", () => {
         const createdProjectsContainer = document.querySelector(".created-projects-container");
+        const projectAdder = document.querySelector(".project-adder")
 
         // Toggle the 'active' and 'inactive' classes for the created projects container.
         createdProjectsContainer.classList.toggle("inactive");
         createdProjectsContainer.classList.toggle("active");
+
+        // Toggle the 'active' and 'inactive' classes for the project adder.
+        projectAdder.classList.toggle("inactive");
+        projectAdder.classList.toggle("active");
     });
 }
