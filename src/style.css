@@ -237,7 +237,12 @@ label[for="sorter"] {
     background-color: white;
 }
 
+.to-do-title {
+    height: 50px;
+}
+
 .to-do-due-date {
+    height: 20px;
     width: 125px;
     padding: 3px;
     border: 2px solid;
