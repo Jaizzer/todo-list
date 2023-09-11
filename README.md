@@ -53,7 +53,7 @@ Click **Home** and you will see **New ToDo** in the to-do window.
 
 6. Afterwards, you will be sent to that project's corresponding to-do window, indicated by the project name on top of the to-do window. 
 
-    ![ToDoList](https://jaizzer.github.io/todo-list/)
+    ![Creating ToDo inside a Project](Demo/creating-todo-inside-project.png)
 
 7. To create a to-do for that project, click **New ToDo** and do the same way as you did in **Home** tab.
 
