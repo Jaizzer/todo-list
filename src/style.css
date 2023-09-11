@@ -75,7 +75,7 @@ body {
     grid-auto-rows: 40px;
     gap: 3px;
 
-    height: 200px;
+    max-height: 200px;
     overflow: scroll;
 }
 
