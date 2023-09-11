@@ -245,6 +245,9 @@ label[for="sorter"] {
 
     font-size: 13px;
     text-transform: uppercase;
+
+    display: grid;
+    align-content: center;
 }
 
 .to-do-due-date.upcoming {
