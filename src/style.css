@@ -163,7 +163,7 @@ body {
 
 /* Project Adder */
 .project-adder.active {
-    padding: 5px 0;
+    padding: 5px;
     border: 0px;
     display: grid;
     grid-template-columns: 20px auto;
