@@ -232,6 +232,7 @@ label[for="sorter"] {
     border-radius: 6px;
     display: grid;
     grid-template-columns: 25px 1fr auto 25px 25px 25px;
+    align-items: center;
     gap: 5px;
     align-content: center;
     background-color: white;
