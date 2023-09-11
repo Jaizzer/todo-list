@@ -522,4 +522,12 @@ input[type=button]:hover {
     .to-do-adder {
         font-size: 12px;
     }
+
+    #sorter {
+        width: 170px;
+    }
+    
+    .to-do-adder {
+        width: 80px;
+    }
 }
