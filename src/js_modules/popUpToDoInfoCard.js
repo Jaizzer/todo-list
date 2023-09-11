@@ -32,6 +32,7 @@ export function popUpToDoInfoCard(toDoCard) {
         const infoValue = document.createElement("div");
         infoValue.className = "to-do-info-value";
         infoValue.textContent = value;
+        infoValue.id = `${label.toLowerCase()}-info`
         infoField.appendChild(infoValue);
 
         return infoField;
