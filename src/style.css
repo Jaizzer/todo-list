@@ -223,7 +223,6 @@ label[for="sorter"] {
     align-content: start;
     gap: 5px;
     overflow: auto;
-    border: 1px solid red;
 }
 
 /* To-Do Container */
