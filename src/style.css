@@ -512,4 +512,14 @@ input[type=button]:hover {
     .to-do-due-date.upcoming {
         width: 100px;
     }
+
+    .parent-project-name {
+        font-size: 17px;
+    }
+
+    #sorter,
+    label [for="sorter"], 
+    .to-do-adder {
+        font-size: 12px;
+    }
 }
