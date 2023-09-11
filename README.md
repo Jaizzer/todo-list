@@ -57,8 +57,6 @@ Click **Home** and you will see **New ToDo** in the to-do window.
 
 7. To create a to-do for that project, click **New ToDo** and do the same way as you did in **Home** tab.
 
-    ![Creating ToDo inside a Project](Demo/creating-todo-inside-project.png)
-
 8. There is a sort option to sort the to-dos' in the to-do window. You could sort by Date(due date), Name (alphabetical), Created (time created), and Priority level.
     
     ![Sorting ToDo](Demo/sorting-todo.png)
