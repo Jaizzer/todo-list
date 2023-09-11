@@ -1,5 +1,5 @@
 # ToDo List
-This is a to-do list app that allows user to create to-dos'.
+This is a to-do list app that allows user to create to-dos'. [Link](https://jaizzer.github.io/todo-list/)
 
 ## Features
 - New ToDo: Users can create to-dos which contain its **Title**, **Due Date** and **Priority**. There are also option information such as **Description** and **Notes**.
