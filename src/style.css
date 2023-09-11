@@ -176,6 +176,10 @@ body {
     color: white;
 }
 
+.project-adder.active:hover {
+    background-color: grey;
+}
+
 .project-adder.inactive {
     display: none;
 }
