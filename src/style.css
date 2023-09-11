@@ -496,6 +496,7 @@ input[type=button]:hover {
     }
 
     .to-do-container {
+        height: 50px;
         gap: 4px;
     }
 
