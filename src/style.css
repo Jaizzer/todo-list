@@ -78,7 +78,8 @@ body {
     align-items: center;
 }
 
-.created-projects-container button {
+.created-projects-container .delete, 
+.created-projects-container .edit {
     height: 20px;
 }
 
