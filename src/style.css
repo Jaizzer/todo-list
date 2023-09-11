@@ -488,7 +488,7 @@ input[type=button]:hover {
         grid-template-rows: auto 1fr;
     }
 
-    .dashboard {
+    .projects-tab * {
         font-size: 13px;
     }
 
