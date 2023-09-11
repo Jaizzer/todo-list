@@ -523,6 +523,10 @@ input[type=button]:hover {
         gap: 3px;
     }
 
+    .created-projects-container.active {
+        height: 125px;
+    }
+
     #home-project .icon,
     #completed-project .icon,
     #today-project .icon,
