@@ -74,6 +74,18 @@ body {
     gap: 3px;
 }
 
+.created-projects-container.active .project-card {
+    align-items: center;
+}
+
+.created-projects-container button {
+    height: 20px;
+}
+
+.created-projects-container .project-name {
+    height: 40px;
+}
+
 /* Project Card */
 .project-card {
     padding: 5px;
