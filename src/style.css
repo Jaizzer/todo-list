@@ -264,7 +264,6 @@ label[for="sorter"] {
     align-self: end;
     justify-self: end;
 
-    height: 30px;
     width: 120px;
     padding: 10px;
     border: 0px;
@@ -279,6 +278,10 @@ label[for="sorter"] {
     align-content: center;
 
     text-align: center;
+}
+
+.to-do-adder, #sorter {
+    height: 30px;
 }
 
 .to-do-adder:hover,
