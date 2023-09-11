@@ -93,7 +93,7 @@ body {
     background-color: grey;
 }
 
-.created-projects-container.active > * {
+.created-projects-container.active>* {
     margin-left: 10px;
     padding: 4px;
     border-radius: 6px;
@@ -176,7 +176,7 @@ body {
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr ;
+    grid-template-rows: auto auto 1fr;
     overflow: hidden;
     align-content: start;
     gap: 10px;
@@ -210,7 +210,7 @@ label[for="sorter"] {
 }
 
 #sorter:focus {
-    outline: none ;
+    outline: none;
     border: 2px solid black;
 }
 
@@ -289,7 +289,8 @@ label[for="sorter"] {
     text-align: center;
 }
 
-.to-do-adder, #sorter {
+.to-do-adder,
+#sorter {
     height: 30px;
 }
 
@@ -326,7 +327,7 @@ label[for="sorter"] {
 }
 
 .info-field-container {
-    padding-top: 5px; 
+    padding-top: 5px;
     padding-right: 3px;
     padding-left: 3px;
     padding-bottom: 30px;
@@ -358,7 +359,7 @@ label[for="sorter"] {
 
 .info-field {
     display: grid;
-    width: 100% ;
+    width: 100%;
     grid-template-columns: 1fr;
 }
 
@@ -486,6 +487,19 @@ input[type=button]:hover {
         grid-template-rows: auto 1fr;
     }
 
+    .dashboard {
+        font-size: 13px;
+    }
+
+    #home-project .icon,
+    #completed-project .icon,
+    #today-project .icon,
+    #this-week-project .icon,
+    #created-projects-dropdown .icon {
+        width: 15px;
+        height: 15px;
+    }
+
     .default-projects-container {
         padding: 10px 0;
         grid-auto-flow: column;
@@ -504,7 +518,7 @@ input[type=button]:hover {
         font-size: 12px;
     }
 
-    .to-do-due-date.late, 
+    .to-do-due-date.late,
     .to-do-due-date.upcoming {
         font-size: 10px;
     }
@@ -519,7 +533,7 @@ input[type=button]:hover {
     }
 
     #sorter,
-    label [for="sorter"], 
+    label [for="sorter"],
     .to-do-adder {
         font-size: 12px;
     }
@@ -527,7 +541,7 @@ input[type=button]:hover {
     #sorter {
         width: 170px;
     }
-    
+
     .to-do-adder {
         width: 80px;
     }
