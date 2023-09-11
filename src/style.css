@@ -506,6 +506,10 @@ input[type=button]:hover {
         height: 15px;
     }
 
+    .logo {
+        font-size: 16px;
+    }
+
     .default-projects-container {
         padding: 0 0 10px 0;
         grid-auto-flow: column;
