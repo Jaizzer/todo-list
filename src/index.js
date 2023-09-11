@@ -28,7 +28,7 @@ function loadProjectsToTabs() {
         if (isDefaultProject(project)) {
             defaultProjectsContainer.appendChild(projectCard);
         } else {
-            insertProjectCard(createdProjectsContainer, projectCard);
+            createdProjectsContainer.appendChild(projectCard);
         }
     });
 }
@@ -41,11 +41,6 @@ function isDefaultProject(project) {
         project.id === "today-project" ||
         project.id === "this-week-project"
     );
-}
-
-// Insert a project card into the created projects container.
-function insertProjectCard(createdProjectsContainer, projectCard) {
-    createdProjectsContainer.insertBefore(projectCard, createdProjectsContainer.querySelector(".project-adder"));
 }
 
 // Set up the project adder button.
