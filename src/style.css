@@ -165,6 +165,7 @@ body {
 .project-adder.active {
     padding: 5px;
     border: 0px;
+    border-radius: 6px;
     display: grid;
     grid-template-columns: 20px auto;
     grid-template-rows: 20px;
