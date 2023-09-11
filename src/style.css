@@ -403,6 +403,17 @@ label[for="sorter"] {
     overflow: auto;
     word-wrap: break-word;
     width: 100%;
+    overflow: auto;
+}
+
+#title-info,
+#project-info {
+    height: 30px;
+}
+
+#description-info,
+#notes-info {
+    height: 90px;
 }
 
 /* Form Container */
