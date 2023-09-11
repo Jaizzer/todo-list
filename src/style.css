@@ -442,6 +442,7 @@ form {
     padding: 25px;
     display: grid;
     gap: 10px;
+    color: black;
 }
 
 textarea {
