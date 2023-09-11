@@ -72,6 +72,7 @@ body {
     margin-left: 13px;
     border-left: 3px solid white;
     display: grid;
+    grid-auto-rows: 40px;
     gap: 3px;
 
     height: 200px;
