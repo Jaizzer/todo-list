@@ -1,21 +1,21 @@
-const path = require("path");
-const HtmlWebpackplugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackplugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: "development",
-    entry: "./src/index.js",
-    devtool: "inline-source-map",
+    mode: 'development',
+    entry: './src/index.js',
+    devtool: 'inline-source-map',
     devServer: {
-        static: "./dist",
+        static: './dist',
     },
     plugins: [
         new HtmlWebpackplugin({
-            template: "./src/index-template.html",
+            template: './src/index-template.html',
         }),
     ],
     output: {
-        filename: "main.js",
-        path: path.resolve(__dirname, "dist"),
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
     module: {
@@ -28,17 +28,17 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)/i,
                 use: [
                     {
-                        loader: "file-loader",
+                        loader: 'file-loader',
                         options: {
-                            context: "src",
-                            name: "[path][name].[ext]",
+                            context: 'src',
+                            name: '[path][name].[ext]',
                         },
                     },
                 ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)/i,
-                type: "asset/resource",
+                type: 'asset/resource',
             },
         ],
     },
